@@ -33,8 +33,10 @@
     <!-- meta -->
 
 
-<title>tags | 道</title>
+<title>Hexo deploy命令突然无法使用 | 道</title>
 
+
+    <meta name="keywords" content="-Github -Hexo">
 
 
 
@@ -58,6 +60,14 @@
     
     
     
+    
+        <link rel="stylesheet" id="hl-default-theme" href="https://cdn.jsdelivr.net/npm/prismjs@1.21.0/themes/prism.min.css" media="none" onload="if(getComputedStyle(document.documentElement).getPropertyValue('--color-mode').indexOf('dark')===-1)this.media='all'">
+        
+            <link rel="stylesheet" id="hl-dark-theme" href="https://cdn.jsdelivr.net/npm/prismjs@1.21.0/themes/prism-tomorrow.min.css" media="none" onload="if(getComputedStyle(document.documentElement).getPropertyValue('--color-mode').indexOf('dark')!==-1)this.media='all'">
+        
+    
+    
+
 
      
     <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
@@ -129,41 +139,153 @@
 </header>
 
 
-    <div class="cover">
-        <div class="cover__logo">
-            
-                <img no-lazy alt="author Image" class="cover__avatar" src="/icons/avatar.png">
+            <main class="main">
+    
+
+<div class="post-title">
+    <h1 class="post-title__text">
+        Hexo deploy命令突然无法使用
+    </h1>
+    <div class="post-title__meta">
+        <a href="/archives/2021/01/" class="post-meta__date button">2021-01-07</a>
+        
+    <span class="separate-dot"></span><a href="/categories/%E6%8A%80%E6%9C%AF/" class="button">技术</a>
+
+ 
+        
+    
+     
+    <span id="busuanzi_container_page_pv" hidden>
+        <span class="separate-dot"></span>
+        <span></span>
+        <span id="busuanzi_value_page_pv"></span>
+        <span>Views</span>
+    </span>
+
+
+
+ 
+
+ 
+    </div>
+</div>
+
+
+    <aside class="post-side">
+        <div class="post-side__toc">
             
         </div>
-        
-        
-            <div class="cover__intro">
-                <p>明日风回更好，今宵露宿何妨</p>
- 
-            </div>
+    </aside>
+    <a class="btn-toc button" id="btn-toc" tabindex="0">
+        <svg viewBox="0 0 1024 1024" width="32" height="32" xmlns="http://www.w3.org/2000/svg">
+            <path d="M128 256h64V192H128zM320 256h576V192H320zM128 544h64v-64H128zM320 544h576v-64H320zM128 832h64v-64H128zM320 832h576v-64H320z" fill="currentColor"></path>
+        </svg>
+    </a>
+    <div class="toc-menus" id="toc-menus">
+        <div class="toc-title">文章目录</div>
         
     </div>
 
+
+<article class="post content-card">
+    <div class="post__header">
+    <div class="post__expire" id="post-expired-notify">
+        <p>
+            本文最后更新于 &lt;span id=&#34;expire-date&#34;&gt;&lt;/span&gt; 天前，文中部分描述可能已经过时。
+        </p>
+    </div>
+    <script>
+        (() => {
+            var update = Date.parse("2021-01-07"),
+                date = new Date(),
+                now = date.getTime(),
+                expire = now - update,
+                expire_days = Math.floor(expire/(24*3600*1000));
+            if (expire_days >= 30) {
+                document.querySelectorAll('#expire-date')[0].innerHTML = expire_days;
+                document.querySelectorAll('#post-expired-notify')[0].style.display = 'block';
+            }
+        })();
+    </script>
+</div>
+    <div class="post__content">
+        <p>今天写完博客，本来打算deploy一下就洗洗睡了，结果突然提示又要我登录。<a id="more"></a></p>
+<p>检查了一下ssh是没有问题的。</p>
+<p>为什么！搜了一大堆教程。最后参考<a target="_blank" rel="noopener" href="https://www.cnblogs.com/xsilence/p/6001938.html">该博文</a>，在站点Config文件内将repo改为</p>
+<blockquote>
+<p><a href="mailto:&#x67;&#x69;&#x74;&#64;&#x67;&#x69;&#x74;&#104;&#x75;&#x62;&#x2e;&#x63;&#111;&#x6d;">&#x67;&#x69;&#x74;&#64;&#x67;&#x69;&#x74;&#104;&#x75;&#x62;&#x2e;&#x63;&#111;&#x6d;</a>: username/username.github.io.git</p>
+</blockquote>
+<p>而不是之前使用的</p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://github.com/username/username.github.io.git">https://github.com/username/username.github.io.git</a></p>
+</blockquote>
+<p>然后就可以了。唉，好麻烦，也不知道是怎么回事，难道是因为今天安装了PicGo？</p>
+
+    </div>
+    
+    <div class="post__license">
+        <p>
+            <strong>本文作者：</strong>AoTen
+        </p>
+        <p>
+            <strong>
+                本文链接：
+            </strong>
+            <a href="https://aoten.ga/%E6%8A%80%E6%9C%AF/462d5882efb6/">https://aoten.ga/%E6%8A%80%E6%9C%AF/462d5882efb6/</a>
+        </p>
+        
+            <strong>
+                <p>版权声明：本博客所有文章除【每日一诗】栏目外，除非特殊声明，默认使用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">CC BY-NC-SA 4.0</a> 协议进行许可，使用时请注意遵守协议。</p>
+
+            </strong>
+        
+    </div>
+ 
+    <div class="post-footer__meta"><p>更新于 2021-01-07</p></div> 
+    <div class="post-meta__cats"><a href="/categories/%E6%8A%80%E6%9C%AF/" class="post-cats__link button">技术</a><a href="/tags/Github-Hexo/" class="post-tags__link button"># -Github -Hexo</a></div> 
+</article>
+
+
+    <div class="nav">
+        <div class="nav__prev">
             
+        </div>
+        <div class="nav__next">
+            
+                <a href="/%E6%8A%80%E6%9C%AF/6cba23a9dda4/" class="nav__link">
+                    <div>
+                        <div class="nav__label">
+                            Next Post
+                        </div>
+                        <div class="nav__title">
+                            【博客搭建记录】使用Typora与PicGo打出Combo
+                        </div>
+                    </div>
+                    <div>
+                        <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" width="24" height="24"><path d="M434.944 790.624l-45.248-45.248L623.04 512l-233.376-233.376 45.248-45.248L713.568 512z" fill="#808080"></path></svg>
+                    </div>
+                </a>
+            
+        </div>
+    </div>
 
-    
-        <main class="main tagscloud">
-            <a href="/tags/Github-Hexo/" style="font-size: 16px; color: #acb3c2">-Github -Hexo</a> <a href="/tags/Typora-PicGo-Github/" style="font-size: 16px; color: #acb3c2">-Typora -PicGo -Github</a> <a href="/tags/Cards/" style="font-size: 16px; color: #acb3c2">Cards</a> <a href="/tags/Cloudflare/" style="font-size: 16px; color: #acb3c2">Cloudflare</a> <a href="/tags/Freenom/" style="font-size: 16px; color: #acb3c2">Freenom</a> <a href="/tags/Github/" style="font-size: 28.67px; color: #676f7f">Github</a> <a href="/tags/Gridea/" style="font-size: 22.33px; color: #8a91a0">Gridea</a> <a href="/tags/Hexo/" style="font-size: 22.33px; color: #8a91a0">Hexo</a> <a href="/tags/Next/" style="font-size: 16px; color: #acb3c2">Next</a> <a href="/tags/%E6%8A%80%E6%9C%AF/" style="font-size: 16px; color: #acb3c2">技术</a> <a href="/tags/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A6%96/" style="font-size: 35px; color: #454d5d">每日一首</a>
-        </main>
-        <style>
-            .tagscloud a {
-                margin-right: 1em;
-                border-bottom: 1px solid #ACB3C2;
-                line-height: 65px;
-                white-space: nowrap;
-            }
-            .tagscloud a:hover {
-                border-bottom: 2px solid #454D5D;
-                text-decoration: none;
-            }
-        </style>
-    
 
+<!--  -->
+
+
+    <script src="https://utteranc.es/client.js"
+        repo="TenAo/tenao.github.io"
+        issue-term="title"
+        label="utterances"
+        theme="preferred-color-scheme"
+        crossorigin="anonymous"
+        async>
+    </script>
+
+
+
+
+</main>
 
             <footer class="footer">
     
