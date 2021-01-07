@@ -152,7 +152,7 @@
 
     
         <main class="main tagscloud">
-            <a href="/tags/Cards/" style="font-size: 16px; color: #acb3c2">Cards</a> <a href="/tags/Cloudflare/" style="font-size: 16px; color: #acb3c2">Cloudflare</a> <a href="/tags/Freenom/" style="font-size: 16px; color: #acb3c2">Freenom</a> <a href="/tags/Github/" style="font-size: 30.25px; color: #5f6776">Github</a> <a href="/tags/Gridea/" style="font-size: 20.75px; color: #929aa9">Gridea</a> <a href="/tags/Hexo/" style="font-size: 25.5px; color: #798090">Hexo</a> <a href="/tags/Next/" style="font-size: 16px; color: #acb3c2">Next</a> <a href="/tags/PicGo/" style="font-size: 16px; color: #acb3c2">PicGo</a> <a href="/tags/Typora/" style="font-size: 16px; color: #acb3c2">Typora</a> <a href="/tags/%E6%8A%80%E6%9C%AF/" style="font-size: 16px; color: #acb3c2">技术</a> <a href="/tags/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A6%96/" style="font-size: 35px; color: #454d5d">每日一首</a>
+            <a href="/tags/Cards/" style="font-size: 16px; color: #acb3c2">Cards</a> <a href="/tags/Cloudflare/" style="font-size: 16px; color: #acb3c2">Cloudflare</a> <a href="/tags/Freenom/" style="font-size: 16px; color: #acb3c2">Freenom</a> <a href="/tags/Github/" style="font-size: 30.25px; color: #5f6776">Github</a> <a href="/tags/Gridea/" style="font-size: 20.75px; color: #929aa9">Gridea</a> <a href="/tags/Hexo/" style="font-size: 25.5px; color: #798090">Hexo</a> <a href="/tags/Next/" style="font-size: 16px; color: #acb3c2">Next</a> <a href="/tags/Permalink/" style="font-size: 16px; color: #acb3c2">Permalink</a> <a href="/tags/PicGo/" style="font-size: 16px; color: #acb3c2">PicGo</a> <a href="/tags/Typora/" style="font-size: 16px; color: #acb3c2">Typora</a> <a href="/tags/everyday-poem/" style="font-size: 35px; color: #454d5d">每日一首</a>
         </main>
         <style>
             .tagscloud a {
@@ -226,7 +226,15 @@
 </footer>
 
         </div>
-         
+        
+    <script defer src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.1.0/dist/lazyload.min.js"></script>
+    <script>
+        window.lazyLoadOptions = {
+            elements_selector: ".lazy",
+            threshold: 0
+        };
+    </script>
+ 
 
  
 
@@ -255,7 +263,7 @@
 <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.4.1/dist/jquery.fancybox.min.js"></script>
 
     <script>
-        let lazyloadT = Boolean('false'),
+        let lazyloadT = Boolean('true'),
             auto_fancybox = Boolean('false')
         if (auto_fancybox) {
             $(".post__content").find('img').each(function () {

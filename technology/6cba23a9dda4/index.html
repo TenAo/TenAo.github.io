@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+    <meta charset="utf-8">
+
+    
+
+    <!-- 渲染优化 -->
+    <meta name="renderer" content="webkit">
+    <meta name="force-rendering" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="HandheldFriendly" content="True" >
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!--icon-->
+
+    
+        <link rel="shortcut icon" href="/icons/favicon.ico">
+    
+    
+        <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
+    
+    
+        <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
+    
+    
+        <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
+    
+    
+
+
+    <!-- meta -->
+
+
+<title>【博客搭建记录】使用Typora与PicGo打出Combo | 道</title>
+
+
+    <meta name="keywords" content="Github, Typora, PicGo">
+
+
+
+
+    <!-- OpenGraph -->
+
+
+    
+<link rel="stylesheet" href="/css/style/main.css">
+ 
+
+
+    
+<link rel="stylesheet" href="/css/style/dark.css">
+
+    
+<script src="/js/darkmode.js"></script>
+
+
+
+    
+    
+    
+    
+        <link rel="stylesheet" id="hl-default-theme" href="https://cdn.jsdelivr.net/npm/prismjs@1.21.0/themes/prism.min.css" media="none" onload="if(getComputedStyle(document.documentElement).getPropertyValue('--color-mode').indexOf('dark')===-1)this.media='all'">
+        
+            <link rel="stylesheet" id="hl-dark-theme" href="https://cdn.jsdelivr.net/npm/prismjs@1.21.0/themes/prism-tomorrow.min.css" media="none" onload="if(getComputedStyle(document.documentElement).getPropertyValue('--color-mode').indexOf('dark')!==-1)this.media='all'">
+        
+    
+    
+
+
+     
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+ 
+
+    <!-- custom head -->
+
+    
+        <meta name="google-site-verification" content="2Fshv3hgkLZf-4k4QEkwZabsX5ivE9saUYT8sluZ-7A" /> 
+    
+
+<meta name="generator" content="Hexo 5.3.0"></head>
+
+    <body>
+        <div id="app">
+            <header class="header">
+    <div class="header__left">
+        <a href="/" class="button">
+            <span class="logo__text">道</span>
+        </a>
+    </div>
+    <div class="header__right">
+        
+            <div class="navbar__menus">
+                
+                    <a href="/" class="navbar-menu button">首页</a>
+                
+                    <a href="/tags/" class="navbar-menu button">标签</a>
+                
+                    <a href="/archives/" class="navbar-menu button">归档</a>
+                
+                    <a href="/friends/" class="navbar-menu button">友链</a>
+                
+            </div>
+        
+        
+        
+    <a href="/search/" id="btn-search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="24" height="24" fill="currentColor" stroke="currentColor" stroke-width="32"><path d="M192 448c0-141.152 114.848-256 256-256s256 114.848 256 256-114.848 256-256 256-256-114.848-256-256z m710.624 409.376l-206.88-206.88A318.784 318.784 0 0 0 768 448c0-176.736-143.264-320-320-320S128 271.264 128 448s143.264 320 320 320a318.784 318.784 0 0 0 202.496-72.256l206.88 206.88 45.248-45.248z"></path></svg>
+    </a>
+
+
+        
+        
+    <a href="javaScript:void(0);" id="btn-toggle-dark">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+    </a>
+
+
+         
+    <a href="#" class="button" id="b2t" aria-label="回到顶部" title="回到顶部">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="32" height="32">
+            <path d="M233.376 722.752L278.624 768 512 534.624 745.376 768l45.248-45.248L512 444.128zM192 352h640V288H192z" fill="currentColor"></path>
+        </svg>
+    </a>
+
+
+        
+            <a class="dropdown-icon button" id="btn-dropdown" tabindex="0"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width='24' height='24' fill="none" stroke="currentColor" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round"><path fill="currentColor" d="M3.314,4.8h13.372c0.41,0,0.743-0.333,0.743-0.743c0-0.41-0.333-0.743-0.743-0.743H3.314c-0.41,0-0.743,0.333-0.743,0.743C2.571,4.467,2.904,4.8,3.314,4.8z M16.686,15.2H3.314c-0.41,0-0.743,0.333-0.743,0.743s0.333,0.743,0.743,0.743h13.372c0.41,0,0.743-0.333,0.743-0.743S17.096,15.2,16.686,15.2z M16.686,9.257H3.314c-0.41,0-0.743,0.333-0.743,0.743s0.333,0.743,0.743,0.743h13.372c0.41,0,0.743-0.333,0.743-0.743S17.096,9.257,16.686,9.257z"></path></svg></a>
+            <div class="dropdown-menus" id="dropdown-menus">
+                
+                    <a href="/" class="dropdown-menu button">首页</a>
+                
+                    <a href="/tags/" class="dropdown-menu button">标签</a>
+                
+                    <a href="/archives/" class="dropdown-menu button">归档</a>
+                
+                    <a href="/friends/" class="dropdown-menu button">友链</a>
+                
+            </div>
+        
+    </div>
+</header>
+
+
+            <main class="main">
+    
+
+<div class="post-title">
+    <h1 class="post-title__text">
+        【博客搭建记录】使用Typora与PicGo打出Combo
+    </h1>
+    <div class="post-title__meta">
+        <a href="/archives/2021/01/" class="post-meta__date button">2021-01-07</a>
+        
+    <span class="separate-dot"></span><a href="/categories/technology/" class="button">技术</a>
+
+ 
+        
+    
+     
+    <span id="busuanzi_container_page_pv" hidden>
+        <span class="separate-dot"></span>
+        <span></span>
+        <span id="busuanzi_value_page_pv"></span>
+        <span>Views</span>
+    </span>
+
+
+
+ 
+
+ 
+    </div>
+</div>
+
+
+    <aside class="post-side">
+        <div class="post-side__toc">
+            
+        </div>
+    </aside>
+    <a class="btn-toc button" id="btn-toc" tabindex="0">
+        <svg viewBox="0 0 1024 1024" width="32" height="32" xmlns="http://www.w3.org/2000/svg">
+            <path d="M128 256h64V192H128zM320 256h576V192H320zM128 544h64v-64H128zM320 544h576v-64H320zM128 832h64v-64H128zM320 832h576v-64H320z" fill="currentColor"></path>
+        </svg>
+    </a>
+    <div class="toc-menus" id="toc-menus">
+        <div class="toc-title">文章目录</div>
+        
+    </div>
+
+
+<article class="post content-card">
+    <div class="post__header">
+    <div class="post__expire" id="post-expired-notify">
+        <p>
+            本文最后更新于 &lt;span id=&#34;expire-date&#34;&gt;&lt;/span&gt; 天前，文中部分描述可能已经过时。
+        </p>
+    </div>
+    <script>
+        (() => {
+            var update = Date.parse("2021-01-08"),
+                date = new Date(),
+                now = date.getTime(),
+                expire = now - update,
+                expire_days = Math.floor(expire/(24*3600*1000));
+            if (expire_days >= 30) {
+                document.querySelectorAll('#expire-date')[0].innerHTML = expire_days;
+                document.querySelectorAll('#post-expired-notify')[0].style.display = 'block';
+            }
+        })();
+    </script>
+</div>
+    <div class="post__content">
+        <ol>
+<li><p>打开Typora偏好设置&gt;图像。</p>
+<p><img src="https://raw.githubusercontent.com/TenAo/Pic/master/img/image-20210107010539290.png" class="lazy" data-srcset="https://raw.githubusercontent.com/TenAo/Pic/master/img/image-20210107010539290.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<p>因为我经常图方便，调用Windows自带的截图功能，直接粘贴进Typora，不存本地图片，所以这里插入图片时才选择复制到指定路径，没有相关需求的也可以选择上传图片，这样在插入时图片就会自动上传。</p>
+<p>上传服务图方便就选择app了。</p>
+</li>
+<li><p>安装完成，根据提示进行设置。需要去<a target="_blank" rel="noopener" href="https://github.com/settings/tokens">Github生成token</a>。</p>
+<p>点击确定保存设置，并设为默认图床。然后在Typora的图像设置里<strong>验证图片上传选项</strong>。验证成功会在repo里上传两张typora的图片。</p>
+</li>
+<li><p>验证成功。进入博文，点击上传所有本地图片。</p>
+<p><img src="https://raw.githubusercontent.com/TenAo/Pic/master/img/2021-01-07_01-26-17.png" class="lazy" data-srcset="https://raw.githubusercontent.com/TenAo/Pic/master/img/2021-01-07_01-26-17.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<p><img src="https://raw.githubusercontent.com/TenAo/Pic/master/img/image-20210107014303110.png" class="lazy" data-srcset="https://raw.githubusercontent.com/TenAo/Pic/master/img/image-20210107014303110.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<p>提示上传成功。</p>
+</li>
+</ol>
+<p>使用了一下觉得开App还是很麻烦，决定还是用PicGo-Core(command line)。而且感觉github传图片经常出奇奇怪怪的问题，最常见的比如图片明明传上去了但是Typora里链接并没有自动更换。决定换Gitee试一试。</p>
+<p>参考教程：<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/d7bf3f9da6db">https://www.jianshu.com/p/d7bf3f9da6db</a></p>
+<p>简单步骤。</p>
+<ol>
+<li><p>Typora内选择PicGo-Core(command line)，点击下载。</p>
+</li>
+<li><p>将程序加入系统环境变量。位置在C:\Users\用户名\AppData\Roaming\Typora\picgo\win64</p>
+</li>
+<li><p>在cmd内根据提示设置，或者直接Typora内打开config文件设置。（推荐）</p>
+<pre class="language-c#" data-language="c#"><code class="language-c#">&#123;
+  &quot;picBed&quot;: &#123;
+    &quot;current&quot;: &quot;gitee&quot;,
+    &quot;gitee&quot;: &#123;
+      &quot;repo&quot;: &quot;username&#x2F;仓库名&quot;,
+      &quot;branch&quot;: &quot;master&quot;,
+      &quot;token&quot;: &quot;&quot;,
+      &quot;path&quot;: &quot;img&quot;,
+      &quot;customPath&quot;: &quot;yearMonth&quot;,
+      &quot;customUrl&quot;: &quot;&quot;
+    &#125;,
+    &quot;uploader&quot;: &quot;gitee&quot;,
+    &quot;transformer&quot;: &quot;path&quot;
+  &#125;,
+  &quot;picgoPlugins&quot;: &#123;
+    &quot;picgo-plugin-gitee-uploader&quot;: true
+  &#125;,
+&#125;</code></pre></li>
+<li><p>验证上传，成功。以及虽然我传图片一般都几十k，但是以防万一还是去gitee开了gitee pages，万一哪天要传我家仓鼠的萌萌Gif呢你说是吧。</p>
+<p>这就可以迅速整一张。（这只不是我家的，是B站UP主<a target="_blank" rel="noopener" href="https://space.bilibili.com/26283835/#!/index">南山有怪兽</a>视频里截的，宇宙无敌巨特么可爱嘤嘤嘤）</p>
+<p><img src="https://gitee.com/yudu22/pic-go/raw/master/img/%E6%89%93%E5%93%88%E6%AC%A0.gif" class="lazy" data-srcset="https://gitee.com/yudu22/pic-go/raw/master/img/%E6%89%93%E5%93%88%E6%AC%A0.gif" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<p>啊这，咋显示不出来？四点几兆也还不算大吧？</p>
+<p>再试一张。</p>
+<p><img src="https://gitee.com/yudu22/pic-go/raw/master/img/37d3d539b6003af3287ea175372ac65c1138b6da.gif" class="lazy" data-srcset="https://gitee.com/yudu22/pic-go/raw/master/img/37d3d539b6003af3287ea175372ac65c1138b6da.gif" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<p>喵喵喵？？？？</p>
+<p>再整一个。</p>
+<img src="https://gitee.com/yudu22/pic-go/raw/master/img/2020-07-21_01-04-45.png" class="lazy" data-srcset="https://gitee.com/yudu22/pic-go/raw/master/img/2020-07-21_01-04-45.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg==" style="zoom:50%;" />
+
+<p>好家伙。gif不能正常显示的意思？</p>
+<p>啊我不管啦！就这样吧。</p>
+<p>。怎么偏偏传了这张图xsk</p>
+<p>猎人什么时候复刊啊，想看酷拉皮卡大美女，嘤嘤嘤。</p>
+</li>
+</ol>
+
+    </div>
+    
+    <div class="post__license">
+        <p>
+            <strong>本文作者：</strong>AoTen
+        </p>
+        <p>
+            <strong>
+                本文链接：
+            </strong>
+            <a href="https://aoten.ga/technology/6cba23a9dda4/">https://aoten.ga/technology/6cba23a9dda4/</a>
+        </p>
+        
+            <strong>
+                <p>版权声明：本博客文章除【每日一首】栏目外，默认使用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">CC BY-NC-SA 4.0</a> 协议进行许可，使用时请注意遵守协议。</p>
+
+            </strong>
+        
+    </div>
+ 
+    <div class="post-footer__meta"><p>更新于 2021-01-08</p></div> 
+    <div class="post-meta__cats"><a href="/categories/technology/" class="post-cats__link button">技术</a><a href="/tags/Github/" class="post-tags__link button"># Github</a><a href="/tags/Typora/" class="post-tags__link button"># Typora</a><a href="/tags/PicGo/" class="post-tags__link button"># PicGo</a></div> 
+</article>
+
+
+    <div class="nav">
+        <div class="nav__prev">
+            
+                <a href="/technology/462d5882efb6/" class="nav__link">
+                    <div>
+                        <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" width="24" height="24"><path d="M589.088 790.624L310.464 512l278.624-278.624 45.248 45.248L400.96 512l233.376 233.376z" fill="#808080"></path></svg>
+                    </div>
+                    <div>
+                        <div class="nav__label">
+                            Previous Post
+                        </div>
+                        <div class="nav__title">
+                            【博客搭建记录】Hexo deploy命令突然无法使用
+                        </div>
+                    </div>
+                </a>
+            
+        </div>
+        <div class="nav__next">
+            
+                <a href="/technology/abd21d162167/" class="nav__link">
+                    <div>
+                        <div class="nav__label">
+                            Next Post
+                        </div>
+                        <div class="nav__title">
+                            【博客搭建记录】Hexo的Cards主题优化
+                        </div>
+                    </div>
+                    <div>
+                        <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" width="24" height="24"><path d="M434.944 790.624l-45.248-45.248L623.04 512l-233.376-233.376 45.248-45.248L713.568 512z" fill="#808080"></path></svg>
+                    </div>
+                </a>
+            
+        </div>
+    </div>
+
+
+<!--  -->
+
+
+    <script src="https://utteranc.es/client.js"
+        repo="TenAo/tenao.github.io"
+        issue-term="title"
+        label="utterances"
+        theme="preferred-color-scheme"
+        crossorigin="anonymous"
+        async>
+    </script>
+
+
+
+
+</main>
+
+            <footer class="footer">
+    <!--添加博客运行时间-->
+    <div>
+    
+      <span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+      <script>
+      var now = new Date();
+      function createtime() {
+        var grt= new Date("01/01/2021 00:00:00");
+        now.setTime(now.getTime()+250);
+        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
+        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
+        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
+        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
+        document.getElementById("timeDate").innerHTML = "本站已在宇宙中运行 "+dnum+" 天 ";
+        document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒啦，";
+      }
+      setInterval("createtime()",250);
+      </script>
+    
+    <!--访客统计-->
+    
+
+
+    
+    
+    
+        <span id="busuanzi_container_site_uv" hidden>
+            <span>您是本站的第</span>
+            <span id="busuanzi_value_site_uv"></span>
+            <span>位访客喵！</span>
+            
+        </span>
+    
+    
+ 
+ 
+
+ 
+    </div>
+
+    
+    
+        
+        <p class="footer-copyright">
+            Copyright © 2020&nbsp;-&nbsp;2021 <a href="/">道</a>
+        </p>
+    
+    
+    <p>Powered by <a href="https://hexo.io" target="_blank">Hexo</a> | Theme - <a href="https://github.com/ChrAlpha/hexo-theme-cards" target="_blank">Cards</a></p>
+    
+
+</footer>
+
+        </div>
+        
+    <script defer src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.1.0/dist/lazyload.min.js"></script>
+    <script>
+        window.lazyLoadOptions = {
+            elements_selector: ".lazy",
+            threshold: 0
+        };
+    </script>
+ 
+
+ 
+
+ 
+
+ 
+
+  
+
+
+
+ 
+
+
+    
+ 
+
+
+    
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.4.1/dist/jquery.fancybox.min.css">
+
+    
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.4.1/dist/jquery.fancybox.min.js"></script>
+
+    <script>
+        let lazyloadT = Boolean('true'),
+            auto_fancybox = Boolean('false')
+        if (auto_fancybox) {
+            $(".post__content").find('img').each(function () {
+                var element = document.createElement("a");
+                $(element).attr("data-fancybox", "gallery");
+                $(element).attr("href", $(this).attr("src"));
+                if (lazyloadT) {
+                    $(element).attr("href", $(this).attr("data-srcset"));
+                }
+                $(this).wrap(element);
+            });
+        } else {
+            $(".post__content").find("fancybox").find('img').each(function () {
+                var element = document.createElement("a");
+                $(element).attr("data-fancybox", "gallery");
+                $(element).attr("href", $(this).attr("src"));
+                if (lazyloadT) {
+                    $(element).attr("href", $(this).attr("data-srcset"));
+                }
+                $(this).wrap(element);
+            });
+        }
+    </script>
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+
+
+    </body>
+</html>

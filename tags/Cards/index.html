@@ -171,12 +171,12 @@
 <div class="post-entry__meta">
     <a href="/archives/2021/01/" class="post-meta__date button">2021-01-04</a>
     
-    <span class="separate-dot"></span><a href="/categories/%E6%8A%80%E6%9C%AF/" class="button">技术</a>
+    <span class="separate-dot"></span><a href="/categories/technology/" class="button">技术</a>
 
  
 </div>
 <div class="post-entry__tags"><a href="/tags/Hexo/" class="post-tags__link button"># Hexo</a><a href="/tags/Cards/" class="post-tags__link button"># Cards</a></div> 
-<a href="/%E6%8A%80%E6%9C%AF/abd21d162167/" class="post-entry__link">【博客搭建记录】Hexo的Cards主题优化</a>
+<a href="/technology/abd21d162167/" class="post-entry__link">【博客搭建记录】Hexo的Cards主题优化</a>
                 </div>
             
         
@@ -245,7 +245,15 @@
 </footer>
 
         </div>
-         
+        
+    <script defer src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.1.0/dist/lazyload.min.js"></script>
+    <script>
+        window.lazyLoadOptions = {
+            elements_selector: ".lazy",
+            threshold: 0
+        };
+    </script>
+ 
 
  
 
@@ -274,7 +282,7 @@
 <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.4.1/dist/jquery.fancybox.min.js"></script>
 
     <script>
-        let lazyloadT = Boolean('false'),
+        let lazyloadT = Boolean('true'),
             auto_fancybox = Boolean('false')
         if (auto_fancybox) {
             $(".post__content").find('img').each(function () {

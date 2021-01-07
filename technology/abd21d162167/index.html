@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+    <meta charset="utf-8">
+
+    
+
+    <!-- 渲染优化 -->
+    <meta name="renderer" content="webkit">
+    <meta name="force-rendering" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="HandheldFriendly" content="True" >
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!--icon-->
+
+    
+        <link rel="shortcut icon" href="/icons/favicon.ico">
+    
+    
+        <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
+    
+    
+        <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
+    
+    
+        <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
+    
+    
+
+
+    <!-- meta -->
+
+
+<title>【博客搭建记录】Hexo的Cards主题优化 | 道</title>
+
+
+    <meta name="keywords" content="Hexo, Cards">
+
+
+
+
+    <!-- OpenGraph -->
+
+
+    
+<link rel="stylesheet" href="/css/style/main.css">
+ 
+
+
+    
+<link rel="stylesheet" href="/css/style/dark.css">
+
+    
+<script src="/js/darkmode.js"></script>
+
+
+
+    
+    
+    
+    
+        <link rel="stylesheet" id="hl-default-theme" href="https://cdn.jsdelivr.net/npm/prismjs@1.21.0/themes/prism.min.css" media="none" onload="if(getComputedStyle(document.documentElement).getPropertyValue('--color-mode').indexOf('dark')===-1)this.media='all'">
+        
+            <link rel="stylesheet" id="hl-dark-theme" href="https://cdn.jsdelivr.net/npm/prismjs@1.21.0/themes/prism-tomorrow.min.css" media="none" onload="if(getComputedStyle(document.documentElement).getPropertyValue('--color-mode').indexOf('dark')!==-1)this.media='all'">
+        
+    
+    
+
+
+     
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+ 
+
+    <!-- custom head -->
+
+    
+        <meta name="google-site-verification" content="2Fshv3hgkLZf-4k4QEkwZabsX5ivE9saUYT8sluZ-7A" /> 
+    
+
+<meta name="generator" content="Hexo 5.3.0"></head>
+
+    <body>
+        <div id="app">
+            <header class="header">
+    <div class="header__left">
+        <a href="/" class="button">
+            <span class="logo__text">道</span>
+        </a>
+    </div>
+    <div class="header__right">
+        
+            <div class="navbar__menus">
+                
+                    <a href="/" class="navbar-menu button">首页</a>
+                
+                    <a href="/tags/" class="navbar-menu button">标签</a>
+                
+                    <a href="/archives/" class="navbar-menu button">归档</a>
+                
+                    <a href="/friends/" class="navbar-menu button">友链</a>
+                
+            </div>
+        
+        
+        
+    <a href="/search/" id="btn-search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="24" height="24" fill="currentColor" stroke="currentColor" stroke-width="32"><path d="M192 448c0-141.152 114.848-256 256-256s256 114.848 256 256-114.848 256-256 256-256-114.848-256-256z m710.624 409.376l-206.88-206.88A318.784 318.784 0 0 0 768 448c0-176.736-143.264-320-320-320S128 271.264 128 448s143.264 320 320 320a318.784 318.784 0 0 0 202.496-72.256l206.88 206.88 45.248-45.248z"></path></svg>
+    </a>
+
+
+        
+        
+    <a href="javaScript:void(0);" id="btn-toggle-dark">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+    </a>
+
+
+         
+    <a href="#" class="button" id="b2t" aria-label="回到顶部" title="回到顶部">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="32" height="32">
+            <path d="M233.376 722.752L278.624 768 512 534.624 745.376 768l45.248-45.248L512 444.128zM192 352h640V288H192z" fill="currentColor"></path>
+        </svg>
+    </a>
+
+
+        
+            <a class="dropdown-icon button" id="btn-dropdown" tabindex="0"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width='24' height='24' fill="none" stroke="currentColor" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round"><path fill="currentColor" d="M3.314,4.8h13.372c0.41,0,0.743-0.333,0.743-0.743c0-0.41-0.333-0.743-0.743-0.743H3.314c-0.41,0-0.743,0.333-0.743,0.743C2.571,4.467,2.904,4.8,3.314,4.8z M16.686,15.2H3.314c-0.41,0-0.743,0.333-0.743,0.743s0.333,0.743,0.743,0.743h13.372c0.41,0,0.743-0.333,0.743-0.743S17.096,15.2,16.686,15.2z M16.686,9.257H3.314c-0.41,0-0.743,0.333-0.743,0.743s0.333,0.743,0.743,0.743h13.372c0.41,0,0.743-0.333,0.743-0.743S17.096,9.257,16.686,9.257z"></path></svg></a>
+            <div class="dropdown-menus" id="dropdown-menus">
+                
+                    <a href="/" class="dropdown-menu button">首页</a>
+                
+                    <a href="/tags/" class="dropdown-menu button">标签</a>
+                
+                    <a href="/archives/" class="dropdown-menu button">归档</a>
+                
+                    <a href="/friends/" class="dropdown-menu button">友链</a>
+                
+            </div>
+        
+    </div>
+</header>
+
+
+            <main class="main">
+    
+
+<div class="post-title">
+    <h1 class="post-title__text">
+        【博客搭建记录】Hexo的Cards主题优化
+    </h1>
+    <div class="post-title__meta">
+        <a href="/archives/2021/01/" class="post-meta__date button">2021-01-04</a>
+        
+    <span class="separate-dot"></span><a href="/categories/technology/" class="button">技术</a>
+
+ 
+        
+    
+     
+    <span id="busuanzi_container_page_pv" hidden>
+        <span class="separate-dot"></span>
+        <span></span>
+        <span id="busuanzi_value_page_pv"></span>
+        <span>Views</span>
+    </span>
+
+
+
+ 
+
+ 
+    </div>
+</div>
+
+
+    <aside class="post-side">
+        <div class="post-side__toc">
+            
+        </div>
+    </aside>
+    <a class="btn-toc button" id="btn-toc" tabindex="0">
+        <svg viewBox="0 0 1024 1024" width="32" height="32" xmlns="http://www.w3.org/2000/svg">
+            <path d="M128 256h64V192H128zM320 256h576V192H320zM128 544h64v-64H128zM320 544h576v-64H320zM128 832h64v-64H128zM320 832h576v-64H320z" fill="currentColor"></path>
+        </svg>
+    </a>
+    <div class="toc-menus" id="toc-menus">
+        <div class="toc-title">文章目录</div>
+        
+    </div>
+
+
+<article class="post content-card">
+    <div class="post__header">
+    <div class="post__expire" id="post-expired-notify">
+        <p>
+            本文最后更新于 &lt;span id=&#34;expire-date&#34;&gt;&lt;/span&gt; 天前，文中部分描述可能已经过时。
+        </p>
+    </div>
+    <script>
+        (() => {
+            var update = Date.parse("2021-01-08"),
+                date = new Date(),
+                now = date.getTime(),
+                expire = now - update,
+                expire_days = Math.floor(expire/(24*3600*1000));
+            if (expire_days >= 30) {
+                document.querySelectorAll('#expire-date')[0].innerHTML = expire_days;
+                document.querySelectorAll('#post-expired-notify')[0].style.display = 'block';
+            }
+        })();
+    </script>
+</div>
+    <div class="post__content">
+        <p><a target="_blank" rel="noopener" href="https://github.com/ChrAlpha/hexo-theme-cards">Cards主题源码</a> <a target="_blank" rel="noopener" href="https://theme-cards.ichr.me/">Cards主题文档</a> <a target="_blank" rel="noopener" href="https://theme-cards.ichr.me/demo/">官方demo站</a></p>
+<p>赞美大佬，这个主题完美符合我的xp，都不需要怎么改。我先天体运行心律不齐20分钟以示尊敬。</p>
+<blockquote class="blockquote-note blockquote-note__important"><div class="blockquote-note__header"><div class="blockquote-note__icon"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="16" viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></div>版本信息</div><div class="blockquote-note__content"><p>Hexo：5.3.0</p>
+<p>Hexo-Cli：4.2.0</p>
+<p>Cards：1.2.0</p>
+</div></blockquote>
+
+<ol>
+<li><p>fold标签使用。</p>
+<pre class="language-html" data-language="html"><code class="language-html">&#123;% fold 折叠摘要 %&#125;
+
+这是被折叠的文字
+
+&#123;% endfold %&#125;</code></pre>
+<details ><summary>折叠效果如下</summary><div class="fold-content"><p>这是被折叠的文字。</p>
+</div></details>
+</li>
+<li><p>note标签使用。</p>
+<pre class="language-html" data-language="html"><code class="language-html">&#123;% note [ type ] 自定义小标题 %&#125;
+
+自定义正文
+
+&#123;% endnote %&#125;</code></pre>
+<p>type可选填info（蓝）、important（绿）、tip（紫）、caution（黄）、warning（红）。详细示例见<a target="_blank" rel="noopener" href="https://theme-cards.ichr.me/demo/2020/06/tag-plugin-note/">官方demo</a>。</p>
+<details ><summary>note效果如下</summary><div class="fold-content"><blockquote class="blockquote-note blockquote-note__info"><div class="blockquote-note__header"><div class="blockquote-note__icon"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="16" viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></div>info</div><div class="blockquote-note__content"></div></blockquote>
+
+<blockquote class="blockquote-note blockquote-note__important"><div class="blockquote-note__header"><div class="blockquote-note__icon"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="16" viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></div>important</div><div class="blockquote-note__content"></div></blockquote>
+
+<blockquote class="blockquote-note blockquote-note__tip"><div class="blockquote-note__header"><div class="blockquote-note__icon"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="16" viewBox="0 0 12 16"><path fill-rule="evenodd" d="M6.5 0C3.48 0 1 2.19 1 5c0 .92.55 2.25 1 3 1.34 2.25 1.78 2.78 2 4v1h5v-1c.22-1.22.66-1.75 2-4 .45-.75 1-2.08 1-3 0-2.81-2.48-5-5.5-5zm3.64 7.48c-.25.44-.47.8-.67 1.11-.86 1.41-1.25 2.06-1.45 3.23-.02.05-.02.11-.02.17H5c0-.06 0-.13-.02-.17-.2-1.17-.59-1.83-1.45-3.23-.2-.31-.42-.67-.67-1.11C2.44 6.78 2 5.65 2 5c0-2.2 2.02-4 4.5-4 1.22 0 2.36.42 3.22 1.19C10.55 2.94 11 3.94 11 5c0 .66-.44 1.78-.86 2.48zM4 14h5c-.23 1.14-1.3 2-2.5 2s-2.27-.86-2.5-2z"></path></svg></div>tip</div><div class="blockquote-note__content"></div></blockquote>
+
+<blockquote class="blockquote-note blockquote-note__caution"><div class="blockquote-note__header"><div class="blockquote-note__icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 0 0 0 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 0 0 .01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z"></path></svg></div>caution</div><div class="blockquote-note__content"></div></blockquote>
+
+<blockquote class="blockquote-note blockquote-note__warning"><div class="blockquote-note__header"><div class="blockquote-note__icon"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="16" viewBox="0 0 12 16"><path fill-rule="evenodd" d="M5.05.31c.81 2.17.41 3.38-.52 4.31C3.55 5.67 1.98 6.45.9 7.98c-1.45 2.05-1.7 6.53 3.53 7.7-2.2-1.16-2.67-4.52-.3-6.61-.61 2.03.53 3.33 1.94 2.86 1.39-.47 2.3.53 2.27 1.67-.02.78-.31 1.44-1.13 1.81 3.42-.59 4.78-3.42 4.78-5.56 0-2.84-2.53-3.22-1.25-5.61-1.52.13-2.03 1.13-1.89 2.75.09 1.08-1.02 1.8-1.86 1.33-.67-.41-.66-1.19-.06-1.78C8.18 5.31 8.68 2.45 5.05.32L5.03.3l.02.01z"></path></svg></div>warning</div><div class="blockquote-note__content"></div></blockquote>
+</div></details>
+</li>
+<li><p>footer内增加本站运行天数。</p>
+<details ><summary>代码</summary><div class="fold-content"><pre class="language-html" data-language="html"><code class="language-html">&lt;% if (theme.footer.operate_time) &#123; %>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>timeDate<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>载入天数...<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>times<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>载入时分秒...<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">></span></span><span class="token script"><span class="token language-javascript">
+    <span class="token keyword">var</span> now <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">function</span> <span class="token function">createtime</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+      <span class="token keyword">var</span> grt<span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token string">"01/01/2021 00:00:00"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      now<span class="token punctuation">.</span><span class="token function">setTime</span><span class="token punctuation">(</span>now<span class="token punctuation">.</span><span class="token function">getTime</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">+</span><span class="token number">250</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      days <span class="token operator">=</span> <span class="token punctuation">(</span>now <span class="token operator">-</span> grt <span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">1000</span> <span class="token operator">/</span> <span class="token number">60</span> <span class="token operator">/</span> <span class="token number">60</span> <span class="token operator">/</span> <span class="token number">24</span><span class="token punctuation">;</span> dnum <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">floor</span><span class="token punctuation">(</span>days<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      hours <span class="token operator">=</span> <span class="token punctuation">(</span>now <span class="token operator">-</span> grt <span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">1000</span> <span class="token operator">/</span> <span class="token number">60</span> <span class="token operator">/</span> <span class="token number">60</span> <span class="token operator">-</span> <span class="token punctuation">(</span><span class="token number">24</span> <span class="token operator">*</span> dnum<span class="token punctuation">)</span><span class="token punctuation">;</span> hnum <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">floor</span><span class="token punctuation">(</span>hours<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token function">String</span><span class="token punctuation">(</span>hnum<span class="token punctuation">)</span><span class="token punctuation">.</span>length <span class="token operator">==</span><span class="token number">1</span> <span class="token punctuation">)</span><span class="token punctuation">&#123;</span>hnum <span class="token operator">=</span> <span class="token string">"0"</span> <span class="token operator">+</span> hnum<span class="token punctuation">;</span><span class="token punctuation">&#125;</span> minutes <span class="token operator">=</span> <span class="token punctuation">(</span>now <span class="token operator">-</span> grt <span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">1000</span> <span class="token operator">/</span><span class="token number">60</span> <span class="token operator">-</span> <span class="token punctuation">(</span><span class="token number">24</span> <span class="token operator">*</span> <span class="token number">60</span> <span class="token operator">*</span> dnum<span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token punctuation">(</span><span class="token number">60</span> <span class="token operator">*</span> hnum<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      mnum <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">floor</span><span class="token punctuation">(</span>minutes<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token function">String</span><span class="token punctuation">(</span>mnum<span class="token punctuation">)</span><span class="token punctuation">.</span>length <span class="token operator">==</span><span class="token number">1</span> <span class="token punctuation">)</span><span class="token punctuation">&#123;</span>mnum <span class="token operator">=</span> <span class="token string">"0"</span> <span class="token operator">+</span> mnum<span class="token punctuation">;</span><span class="token punctuation">&#125;</span>
+      seconds <span class="token operator">=</span> <span class="token punctuation">(</span>now <span class="token operator">-</span> grt <span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">1000</span> <span class="token operator">-</span> <span class="token punctuation">(</span><span class="token number">24</span> <span class="token operator">*</span> <span class="token number">60</span> <span class="token operator">*</span> <span class="token number">60</span> <span class="token operator">*</span> dnum<span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token punctuation">(</span><span class="token number">60</span> <span class="token operator">*</span> <span class="token number">60</span> <span class="token operator">*</span> hnum<span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token punctuation">(</span><span class="token number">60</span> <span class="token operator">*</span> mnum<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      snum <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">round</span><span class="token punctuation">(</span>seconds<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token function">String</span><span class="token punctuation">(</span>snum<span class="token punctuation">)</span><span class="token punctuation">.</span>length <span class="token operator">==</span><span class="token number">1</span> <span class="token punctuation">)</span><span class="token punctuation">&#123;</span>snum <span class="token operator">=</span> <span class="token string">"0"</span> <span class="token operator">+</span> snum<span class="token punctuation">;</span><span class="token punctuation">&#125;</span>
+      document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">"timeDate"</span><span class="token punctuation">)</span><span class="token punctuation">.</span>innerHTML <span class="token operator">=</span> <span class="token string">"本站已在宇宙中运行 "</span><span class="token operator">+</span>dnum<span class="token operator">+</span><span class="token string">" 天 "</span><span class="token punctuation">;</span>
+      document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">"times"</span><span class="token punctuation">)</span><span class="token punctuation">.</span>innerHTML <span class="token operator">=</span> hnum <span class="token operator">+</span> <span class="token string">" 小时 "</span> <span class="token operator">+</span> mnum <span class="token operator">+</span> <span class="token string">" 分 "</span> <span class="token operator">+</span> snum <span class="token operator">+</span> <span class="token string">" 秒啦"</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token function">setInterval</span><span class="token punctuation">(</span><span class="token string">"createtime()"</span><span class="token punctuation">,</span><span class="token number">250</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+&lt;% &#125; %></code></pre></div></details>
+
+<p>效果如下：</p>
+<p><img src="https://raw.githubusercontent.com/TenAo/Pic/master/img/image-20210104214459318.png" class="lazy" data-srcset="https://raw.githubusercontent.com/TenAo/Pic/master/img/image-20210104214459318.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+</li>
+<li><p>Darkmode颜色调整。</p>
+<blockquote>
+<p>..\themes\cards\source\css\style\_base\darkmode.styl</p>
+</blockquote>
+<pre class="language-stylus" data-language="stylus"><code class="language-stylus"><span class="token comment">/*自行更改*/</span>
+<span class="token property-declaration"><span class="token property">--bg-color</span> <span class="token hexcode">#282828</span></span>
+<span class="token property-declaration"><span class="token property">--bg-content-color</span> <span class="token hexcode">#333333</span></span>
+<span class="token comment">/*更改完毕*/</span></code></pre>
+
+
+
+</li>
+</ol>
+<ol start="5">
+<li><p>一个bug。开启fancybox后图片显示无法居中。已解决。</p>
+<blockquote>
+<p>..\themes\cards\source\css\style\_pages\post.styl</p>
+</blockquote>
+<details ><summary>代码更改如下</summary><div class="fold-content"><pre class="language-stylus" data-language="stylus"><code class="language-stylus"><span class="token selector">……
+.post__content</span>
+    <span class="token selector">p</span>
+        <span class="token property-declaration"><span class="token property">line-height</span> $lineheight</span>
+
+    <span class="token selector">img</span>
+        <span class="token selector">&amp;.inline</span>
+            <span class="token property-declaration"><span class="token property">display</span> inline</span>
+
+    <span class="token selector">div>img<span class="token punctuation">,</span>p>img<span class="token punctuation">,</span>div>picture>img<span class="token punctuation">,</span>p>picture>img<span class="token punctuation">,</span>a>img</span>
+        <span class="token property-declaration"><span class="token property">display</span> block</span>
+        <span class="token property-declaration"><span class="token property">margin</span> auto</span>
+        <span class="token property-declaration"><span class="token property">border-radius</span> <span class="token number">4</span><span class="token unit">px</span></span>
+
+    <span class="token selector">span</span>
+        <span class="token selector">img</span>
+            <span class="token property-declaration"><span class="token property">display</span> inline</span>
+            <span class="token property-declaration"><span class="token property">margin</span> auto</span>
+……</code></pre>
+<p>在<em>div&gt;img,p&gt;img,div&gt;picture&gt;img,p&gt;picture&gt;img</em>这一串后面加上<strong>a&gt;img</strong>。</p>
+</div></details>
+</li>
+<li><p>搜索界面优化。</p>
+<blockquote>
+<p>..\themes\cards\source\css\style\_functions\search.styl</p>
+</blockquote>
+</li>
+<li><p>文章内链接颜色优化。</p>
+<blockquote>
+<p>..\themes\cards\source\css\style\_base\defines.styl</p>
+<p>..\themes\cards\source\css\style\_pages\post.styl</p>
+</blockquote>
+<details ><summary>代码内容</summary><div class="fold-content"><p>defines.styl文件内添加定义：</p>
+<pre class="language-stylus" data-language="stylus"><code class="language-stylus"><span class="token variable-declaration"><span class="token variable">$color_post_link</span> <span class="token operator">=</span> convert<span class="token punctuation">(</span>hexo-config<span class="token punctuation">(</span><span class="token string">'style.color.post_link_color'</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">||</span> <span class="token hexcode">#a5dff9</span></span>
+</code></pre>
+<p>post.styl 文件内.post__content和.post-entry__content下增加样式：</p>
+<pre class="language-stylus" data-language="stylus"><code class="language-stylus"><span class="token selector"><span class="token comment">/*自行添加*/</span>
+a</span>
+    <span class="token property-declaration"><span class="token property">color</span> $color_post_link</span>
+<span class="token comment">/*添加完毕*/</span>  </code></pre>
+<p>post content就是文章界面文章内容的link颜色。post-entry content就是首页的文章内容里的link颜色，即下图的蓝色链接。</p>
+<p>不过这个其实不太用得到，正常人谁在description里放链接啊（ry</p>
+<p><img src="https://raw.githubusercontent.com/TenAo/Pic/master/img/2021-01-05_20-32-16.png" class="lazy" data-srcset="https://raw.githubusercontent.com/TenAo/Pic/master/img/2021-01-05_20-32-16.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+</div></details>
+
+<p>最后再在主题配置文件内style-&gt;color下新添一个值<em>post_link_color</em>，就可以比较方便地更改颜色了。</p>
+<p><img src="https://raw.githubusercontent.com/TenAo/Pic/master/img/image-20210105201043908.png" class="lazy" data-srcset="https://raw.githubusercontent.com/TenAo/Pic/master/img/image-20210105201043908.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<p>多说一句，网页设计只要不超过4种颜色，基本上不会丑到哪里去。</p>
+</li>
+<li><p>评论系统使用Gitalk，设置参考<a target="_blank" rel="noopener" href="https://theme-cards.ichr.me/third-party/#Gitalk">Cards官方文档</a>。申请Application的时候设置了域名就填写完整域名，不要填原本的仓库link（xxx.github.io），否则无法正常使用。</p>
+<p>使用中遇到一个bug。Darkmode看不到H1~H5的标题文字，正文和H6可以。</p>
+<p><img src="https://raw.githubusercontent.com/TenAo/Pic/master/img/image-20210105215331380.png" class="lazy" data-srcset="https://raw.githubusercontent.com/TenAo/Pic/master/img/image-20210105215331380.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<p>日间模式是这样的：</p>
+<p><img src="https://raw.githubusercontent.com/TenAo/Pic/master/img/image-20210105215418979.png" class="lazy" data-srcset="https://raw.githubusercontent.com/TenAo/Pic/master/img/image-20210105215418979.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<p>解决起来不难，自己覆写一下css就行了，不过我懒得写，而且Gitalk的权限申请似乎有点多。目前换成了uttrances。</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/apps/utterances">安装界面</a></p>
+<p>安装后在<a target="_blank" rel="noopener" href="https://utteranc.es/">该页面</a>进行设置。</p>
+<p>repo：username/username.github.io</p>
+<p>Blog Post  Issue Mapping：建议选择Issue title contains page title，即issue名为页面名称（文章标题）。</p>
+<p>Issue Label：issue标签（选填），必须要已经存在的标签，可以自己去github创建。</p>
+<p>设置完皮肤，copy代码到</p>
+<blockquote>
+<p>..\themes\cards\layout\_partial\post\post-content.ejs</p>
+</blockquote>
+<p>本来打算写一下明暗切换不同css的，想写进plugin的comments里，不过看了一下代码觉得很麻烦就不写了，我一看js代码就头痛。反正我也不用日间模式，太容易瞎了（。</p>
+<p>我很懒的，不要学我。</p>
+<p>评论效果如下：</p>
+<p><img src="https://raw.githubusercontent.com/TenAo/Pic/master/img/image-20210106001229177.png" class="lazy" data-srcset="https://raw.githubusercontent.com/TenAo/Pic/master/img/image-20210106001229177.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<p>我装完还是去看了一下utterances的申请权限。</p>
+<p>这个是添加APP组件需要的权限。</p>
+<p><img src="https://raw.githubusercontent.com/TenAo/Pic/master/img/image-20210106000009576.png" class="lazy" data-srcset="https://raw.githubusercontent.com/TenAo/Pic/master/img/image-20210106000009576.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<p>这个是如果要评论，绑定Github账号时申请的权限。</p>
+<p><img src="https://raw.githubusercontent.com/TenAo/Pic/master/img/image-20210106001616747.png" class="lazy" data-srcset="https://raw.githubusercontent.com/TenAo/Pic/master/img/image-20210106001616747.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<p>前一个还正常，后面这个Act on your behalf看起来还是很危险啊喂。</p>
+<p>实在担心，可以评论完就去<a target="_blank" rel="noopener" href="https://github.com/settings/apps/authorizations">这里</a>把权限取消掉。唉这个样式太好看了，不舍得换（。）</p>
+</li>
+</ol>
+
+    </div>
+    
+    <div class="post__license">
+        <p>
+            <strong>本文作者：</strong>AoTen
+        </p>
+        <p>
+            <strong>
+                本文链接：
+            </strong>
+            <a href="https://aoten.ga/technology/abd21d162167/">https://aoten.ga/technology/abd21d162167/</a>
+        </p>
+        
+            <strong>
+                <p>版权声明：本博客文章除【每日一首】栏目外，默认使用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">CC BY-NC-SA 4.0</a> 协议进行许可，使用时请注意遵守协议。</p>
+
+            </strong>
+        
+    </div>
+ 
+    <div class="post-footer__meta"><p>更新于 2021-01-08</p></div> 
+    <div class="post-meta__cats"><a href="/categories/technology/" class="post-cats__link button">技术</a><a href="/tags/Hexo/" class="post-tags__link button"># Hexo</a><a href="/tags/Cards/" class="post-tags__link button"># Cards</a></div> 
+</article>
+
+
+    <div class="nav">
+        <div class="nav__prev">
+            
+                <a href="/technology/6cba23a9dda4/" class="nav__link">
+                    <div>
+                        <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" width="24" height="24"><path d="M589.088 790.624L310.464 512l278.624-278.624 45.248 45.248L400.96 512l233.376 233.376z" fill="#808080"></path></svg>
+                    </div>
+                    <div>
+                        <div class="nav__label">
+                            Previous Post
+                        </div>
+                        <div class="nav__title">
+                            【博客搭建记录】使用Typora与PicGo打出Combo
+                        </div>
+                    </div>
+                </a>
+            
+        </div>
+        <div class="nav__next">
+            
+                <a href="/technology/32eb3490d24d/" class="nav__link">
+                    <div>
+                        <div class="nav__label">
+                            Next Post
+                        </div>
+                        <div class="nav__title">
+                            【博客搭建记录】Hexo的Next主题优化
+                        </div>
+                    </div>
+                    <div>
+                        <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" width="24" height="24"><path d="M434.944 790.624l-45.248-45.248L623.04 512l-233.376-233.376 45.248-45.248L713.568 512z" fill="#808080"></path></svg>
+                    </div>
+                </a>
+            
+        </div>
+    </div>
+
+
+<!--  -->
+
+
+    <script src="https://utteranc.es/client.js"
+        repo="TenAo/tenao.github.io"
+        issue-term="title"
+        label="utterances"
+        theme="preferred-color-scheme"
+        crossorigin="anonymous"
+        async>
+    </script>
+
+
+
+
+</main>
+
+            <footer class="footer">
+    <!--添加博客运行时间-->
+    <div>
+    
+      <span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+      <script>
+      var now = new Date();
+      function createtime() {
+        var grt= new Date("01/01/2021 00:00:00");
+        now.setTime(now.getTime()+250);
+        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
+        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
+        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
+        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
+        document.getElementById("timeDate").innerHTML = "本站已在宇宙中运行 "+dnum+" 天 ";
+        document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒啦，";
+      }
+      setInterval("createtime()",250);
+      </script>
+    
+    <!--访客统计-->
+    
+
+
+    
+    
+    
+        <span id="busuanzi_container_site_uv" hidden>
+            <span>您是本站的第</span>
+            <span id="busuanzi_value_site_uv"></span>
+            <span>位访客喵！</span>
+            
+        </span>
+    
+    
+ 
+ 
+
+ 
+    </div>
+
+    
+    
+        
+        <p class="footer-copyright">
+            Copyright © 2020&nbsp;-&nbsp;2021 <a href="/">道</a>
+        </p>
+    
+    
+    <p>Powered by <a href="https://hexo.io" target="_blank">Hexo</a> | Theme - <a href="https://github.com/ChrAlpha/hexo-theme-cards" target="_blank">Cards</a></p>
+    
+
+</footer>
+
+        </div>
+        
+    <script defer src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.1.0/dist/lazyload.min.js"></script>
+    <script>
+        window.lazyLoadOptions = {
+            elements_selector: ".lazy",
+            threshold: 0
+        };
+    </script>
+ 
+
+ 
+
+ 
+
+ 
+
+  
+
+
+
+ 
+
+
+    
+ 
+
+
+    
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.4.1/dist/jquery.fancybox.min.css">
+
+    
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.4.1/dist/jquery.fancybox.min.js"></script>
+
+    <script>
+        let lazyloadT = Boolean('true'),
+            auto_fancybox = Boolean('false')
+        if (auto_fancybox) {
+            $(".post__content").find('img').each(function () {
+                var element = document.createElement("a");
+                $(element).attr("data-fancybox", "gallery");
+                $(element).attr("href", $(this).attr("src"));
+                if (lazyloadT) {
+                    $(element).attr("href", $(this).attr("data-srcset"));
+                }
+                $(this).wrap(element);
+            });
+        } else {
+            $(".post__content").find("fancybox").find('img').each(function () {
+                var element = document.createElement("a");
+                $(element).attr("data-fancybox", "gallery");
+                $(element).attr("href", $(this).attr("src"));
+                if (lazyloadT) {
+                    $(element).attr("href", $(this).attr("data-srcset"));
+                }
+                $(this).wrap(element);
+            });
+        }
+    </script>
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+
+
+    </body>
+</html>

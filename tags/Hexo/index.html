@@ -160,7 +160,28 @@
                     <div class="post-entry__header"></div>
 <div class="post-entry__content">
     <h2 class="post-entry__title">
-        Hexo deploy命令突然无法使用
+        【博客搭建记录】Hexo——如何让文章链接没有中文路径
+    </h2>
+    
+        <p>前文在Next主题优化时曾经修改过permalink设置。事实证明链接设置这种东西应该早一点定下来的，不然后面分享文章容易失效，以后文章多了改起来头发都得薅没。
+    
+</div>
+<div class="post-entry__meta">
+    <a href="/archives/2021/01/" class="post-meta__date button">2021-01-08</a>
+    
+    <span class="separate-dot"></span><a href="/categories/technology/" class="button">技术</a>
+
+ 
+</div>
+<div class="post-entry__tags"><a href="/tags/Hexo/" class="post-tags__link button"># Hexo</a><a href="/tags/Permalink/" class="post-tags__link button"># Permalink</a></div> 
+<a href="/technology/9d4815d0b1c2/" class="post-entry__link">【博客搭建记录】Hexo——如何让文章链接没有中文路径</a>
+                </div>
+            
+                <div class='post-entry content-card'>
+                    <div class="post-entry__header"></div>
+<div class="post-entry__content">
+    <h2 class="post-entry__title">
+        【博客搭建记录】Hexo deploy命令突然无法使用
     </h2>
     
         <p>今天写完博客，本来打算deploy一下就洗洗睡了，结果突然提示又要我登录。
@@ -169,12 +190,12 @@
 <div class="post-entry__meta">
     <a href="/archives/2021/01/" class="post-meta__date button">2021-01-07</a>
     
-    <span class="separate-dot"></span><a href="/categories/%E6%8A%80%E6%9C%AF/" class="button">技术</a>
+    <span class="separate-dot"></span><a href="/categories/technology/" class="button">技术</a>
 
  
 </div>
 <div class="post-entry__tags"><a href="/tags/Github/" class="post-tags__link button"># Github</a><a href="/tags/Hexo/" class="post-tags__link button"># Hexo</a></div> 
-<a href="/%E6%8A%80%E6%9C%AF/462d5882efb6/" class="post-entry__link">Hexo deploy命令突然无法使用</a>
+<a href="/technology/462d5882efb6/" class="post-entry__link">【博客搭建记录】Hexo deploy命令突然无法使用</a>
                 </div>
             
                 <div class='post-entry content-card'>
@@ -192,12 +213,12 @@
 <div class="post-entry__meta">
     <a href="/archives/2021/01/" class="post-meta__date button">2021-01-04</a>
     
-    <span class="separate-dot"></span><a href="/categories/%E6%8A%80%E6%9C%AF/" class="button">技术</a>
+    <span class="separate-dot"></span><a href="/categories/technology/" class="button">技术</a>
 
  
 </div>
 <div class="post-entry__tags"><a href="/tags/Hexo/" class="post-tags__link button"># Hexo</a><a href="/tags/Cards/" class="post-tags__link button"># Cards</a></div> 
-<a href="/%E6%8A%80%E6%9C%AF/abd21d162167/" class="post-entry__link">【博客搭建记录】Hexo的Cards主题优化</a>
+<a href="/technology/abd21d162167/" class="post-entry__link">【博客搭建记录】Hexo的Cards主题优化</a>
                 </div>
             
                 <div class='post-entry content-card'>
@@ -215,12 +236,12 @@
 <div class="post-entry__meta">
     <a href="/archives/2021/01/" class="post-meta__date button">2021-01-03</a>
     
-    <span class="separate-dot"></span><a href="/categories/%E6%8A%80%E6%9C%AF/" class="button">技术</a>
+    <span class="separate-dot"></span><a href="/categories/technology/" class="button">技术</a>
 
  
 </div>
 <div class="post-entry__tags"><a href="/tags/Github/" class="post-tags__link button"># Github</a><a href="/tags/Hexo/" class="post-tags__link button"># Hexo</a><a href="/tags/Next/" class="post-tags__link button"># Next</a></div> 
-<a href="/%E6%8A%80%E6%9C%AF/32eb3490d24d/" class="post-entry__link">【博客搭建记录】Hexo的Next主题优化</a>
+<a href="/technology/32eb3490d24d/" class="post-entry__link">【博客搭建记录】Hexo的Next主题优化</a>
                 </div>
             
         
@@ -289,7 +310,15 @@
 </footer>
 
         </div>
-         
+        
+    <script defer src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.1.0/dist/lazyload.min.js"></script>
+    <script>
+        window.lazyLoadOptions = {
+            elements_selector: ".lazy",
+            threshold: 0
+        };
+    </script>
+ 
 
  
 
@@ -318,7 +347,7 @@
 <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.4.1/dist/jquery.fancybox.min.js"></script>
 
     <script>
-        let lazyloadT = Boolean('false'),
+        let lazyloadT = Boolean('true'),
             auto_fancybox = Boolean('false')
         if (auto_fancybox) {
             $(".post__content").find('img').each(function () {
