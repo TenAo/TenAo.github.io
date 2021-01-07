@@ -227,7 +227,7 @@
         </p>
         
             <strong>
-                <p>版权声明：本博客所有文章除【每日一诗】栏目外，除非特殊声明，默认使用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">CC BY-NC-SA 4.0</a> 协议进行许可，使用时请注意遵守协议。</p>
+                <p>版权声明：本博客文章除【每日一首】栏目外，默认使用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">CC BY-NC-SA 4.0</a> 协议进行许可，使用时请注意遵守协议。</p>
 
             </strong>
         
@@ -280,29 +280,9 @@
 </main>
 
             <footer class="footer">
+    <!--添加博客运行时间-->
+    <div>
     
-
-
-    
-    
-    
-    
- 
- 
-
- 
-    
-        
-        <p class="footer-copyright">
-            Copyright © 2020&nbsp;-&nbsp;2021 <a href="/">道</a>
-        </p>
-    
-    
-    <p>Powered by <a href="https://hexo.io" target="_blank">Hexo</a> | Theme - <a href="https://github.com/ChrAlpha/hexo-theme-cards" target="_blank">Cards</a></p>
-    
-<!--添加博客运行时间-->
-    
-      <div>
       <span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
       <script>
       var now = new Date();
@@ -316,11 +296,41 @@
         seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
         snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
         document.getElementById("timeDate").innerHTML = "本站已在宇宙中运行 "+dnum+" 天 ";
-        document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒啦";
+        document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒啦，";
       }
       setInterval("createtime()",250);
       </script>
+    
+    <!--访客统计-->
+    
+
+
+    
+    
+    
+        <span id="busuanzi_container_site_uv" hidden>
+            <span>您是本站的第</span>
+            <span id="busuanzi_value_site_uv"></span>
+            <span>位访客喵！</span>
+            
+        </span>
+    
+    
+ 
+ 
+
+ 
     </div>
+
+    
+    
+        
+        <p class="footer-copyright">
+            Copyright © 2020&nbsp;-&nbsp;2021 <a href="/">道</a>
+        </p>
+    
+    
+    <p>Powered by <a href="https://hexo.io" target="_blank">Hexo</a> | Theme - <a href="https://github.com/ChrAlpha/hexo-theme-cards" target="_blank">Cards</a></p>
     
 
 </footer>

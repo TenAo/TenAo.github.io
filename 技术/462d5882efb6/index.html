@@ -213,7 +213,7 @@
 <p>检查了一下ssh是没有问题的。</p>
 <p>为什么！搜了一大堆教程。最后参考<a target="_blank" rel="noopener" href="https://www.cnblogs.com/xsilence/p/6001938.html">该博文</a>，在站点Config文件内将repo改为</p>
 <blockquote>
-<p><a href="mailto:&#103;&#105;&#x74;&#x40;&#x67;&#x69;&#x74;&#104;&#x75;&#x62;&#46;&#99;&#x6f;&#109;">&#103;&#105;&#x74;&#x40;&#x67;&#x69;&#x74;&#104;&#x75;&#x62;&#46;&#99;&#x6f;&#109;</a>: username/username.github.io.git</p>
+<p><a href="mailto:&#x67;&#105;&#116;&#64;&#103;&#x69;&#116;&#104;&#117;&#x62;&#x2e;&#x63;&#111;&#x6d;">&#x67;&#105;&#116;&#64;&#103;&#x69;&#116;&#104;&#117;&#x62;&#x2e;&#x63;&#111;&#x6d;</a>: username/username.github.io.git</p>
 </blockquote>
 <p>而不是之前使用的</p>
 <blockquote>
@@ -235,7 +235,7 @@
         </p>
         
             <strong>
-                <p>版权声明：本博客所有文章除【每日一诗】栏目外，除非特殊声明，默认使用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">CC BY-NC-SA 4.0</a> 协议进行许可，使用时请注意遵守协议。</p>
+                <p>版权声明：本博客文章除【每日一首】栏目外，默认使用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">CC BY-NC-SA 4.0</a> 协议进行许可，使用时请注意遵守协议。</p>
 
             </strong>
         
@@ -288,29 +288,9 @@
 </main>
 
             <footer class="footer">
+    <!--添加博客运行时间-->
+    <div>
     
-
-
-    
-    
-    
-    
- 
- 
-
- 
-    
-        
-        <p class="footer-copyright">
-            Copyright © 2020&nbsp;-&nbsp;2021 <a href="/">道</a>
-        </p>
-    
-    
-    <p>Powered by <a href="https://hexo.io" target="_blank">Hexo</a> | Theme - <a href="https://github.com/ChrAlpha/hexo-theme-cards" target="_blank">Cards</a></p>
-    
-<!--添加博客运行时间-->
-    
-      <div>
       <span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
       <script>
       var now = new Date();
@@ -324,11 +304,41 @@
         seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
         snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
         document.getElementById("timeDate").innerHTML = "本站已在宇宙中运行 "+dnum+" 天 ";
-        document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒啦";
+        document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒啦，";
       }
       setInterval("createtime()",250);
       </script>
+    
+    <!--访客统计-->
+    
+
+
+    
+    
+    
+        <span id="busuanzi_container_site_uv" hidden>
+            <span>您是本站的第</span>
+            <span id="busuanzi_value_site_uv"></span>
+            <span>位访客喵！</span>
+            
+        </span>
+    
+    
+ 
+ 
+
+ 
     </div>
+
+    
+    
+        
+        <p class="footer-copyright">
+            Copyright © 2020&nbsp;-&nbsp;2021 <a href="/">道</a>
+        </p>
+    
+    
+    <p>Powered by <a href="https://hexo.io" target="_blank">Hexo</a> | Theme - <a href="https://github.com/ChrAlpha/hexo-theme-cards" target="_blank">Cards</a></p>
     
 
 </footer>
