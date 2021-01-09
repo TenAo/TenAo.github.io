@@ -1,0 +1,1203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+  
+    
+    <entry>
+      <title>【博客搭建记录】在主页隐藏特定分类或标签的文章/PicGo-Core上传图片顺序出错问题</title>
+      <link href="technology/e272e0170ecd/"/>
+      <url>technology/e272e0170ecd/</url>
+      
+        <content type="html"><![CDATA[<blockquote class="blockquote-note blockquote-note__info"><div class="blockquote-note__header"><div class="blockquote-note__icon"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="16" viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></div>Hexo——在主页隐藏特定分类或标签的文章</div><div class="blockquote-note__content"><p>因为我有一周背五天诗词的习惯，所以博客内有个<a href="https://aoten.ga/categories/literature/everyday-poem/">每日一首</a>栏目，虽然实质上是每周五首，甚至有时候摸鱼不背（x</p><p>这个分类下只是我的背诗记录，没有必要让它显示在首页。要怎么解决这个问题呢？</p></div></blockquote><p>搜索了一下相关的插件。有 <a href="https://github.com/printempw/hexo-hide-posts/blob/master/README_ZH.md">hexo-hide-posts</a>，但这个插件是为了增加私密性，而且似乎需要每篇文章单独设置，不太符合我的需求。所以还是决定使用 hexo-generator-index2 插件。</p><p>使用步骤参考 <a href="https://github.com/printempw/hexo-hide-posts/blob/master/README_ZH.md">插件官方文档</a>。</p><p>个人设置。目前只在exclude内填入相关tag就好。</p><img src="https://gitee.com/yudu22/pic-go/raw/master/img/image-20210109204946121.png" class="lazy" data-srcset="https://gitee.com/yudu22/pic-go/raw/master/img/image-20210109204946121.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg==" style="zoom:80%;" /><p>设置完后，发现网站名称的显示出现了问题，如下图。</p><p><img src="https://gitee.com/yudu22/pic-go/raw/master/img/image-20210109213355487.png" class="lazy" data-srcset="https://gitee.com/yudu22/pic-go/raw/master/img/image-20210109213355487.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p><p>查看cmd，发现里面提示 index = false，而原本的generator中 index = true。</p><p><img src="https://gitee.com/yudu22/pic-go/raw/master/img/image-20210109213718924.png" class="lazy" data-srcset="https://gitee.com/yudu22/pic-go/raw/master/img/image-20210109213718924.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p><p>那么我们在设置里添上一行 index = true。</p><p><img src="https://gitee.com/yudu22/pic-go/raw/master/img/image-20210109213831949.png" class="lazy" data-srcset="https://gitee.com/yudu22/pic-go/raw/master/img/image-20210109213831949.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p><p>重新hexo s，问题解决。</p><p><img src="https://gitee.com/yudu22/pic-go/raw/master/img/image-20210109213925938.png" class="lazy" data-srcset="https://gitee.com/yudu22/pic-go/raw/master/img/image-20210109213925938.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p><p>希望hexo以后可以添加上相关功能吧，还有文章置顶之类的，都还挺常用。不过我目前用不上，就不去折腾了。</p><blockquote class="blockquote-note blockquote-note__info"><div class="blockquote-note__header"><div class="blockquote-note__icon"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="16" viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></div>PicGo上传图片顺序出错问题</div><div class="blockquote-note__content"><p>今天使用Typora+PicGo-Core+Gitee，发现如果以“上传所有本地图片”方式上传的话，图片顺序会有问题啊啊啊啊啊——！</p></div></blockquote><p>去搜了一下相关issue，似乎已经在1.4.9版本修复了该问题。</p><p><a href="https://github.com/PicGo/PicGo-Core/issues/40">https://github.com/PicGo/PicGo-Core/issues/40</a></p><p><a href="https://github.com/PicGo/PicGo-Core/commit/2bf1ed9">https://github.com/PicGo/PicGo-Core/commit/2bf1ed9</a></p><p>我心想不对啊，我刚刚安装的PicGo，那难道不是最新版？进Typora一看，显示PicGo-Core已安装最新版本1.4.7。哦对这个好像是打包后的版本。</p><p>行吧，那趁热打铁把这个问题解决掉。存一个安装记录。参考自<a href="https://www.cnblogs.com/Run2948/p/13408419.html">该博文</a>。</p><p>Typora设置，上传服务选择Custom Command</p><p>命令格式： <strong>[your node path] [your picgo path] upload</strong></p><ol><li>查看node路径。</li></ol><p><img src="https://gitee.com/yudu22/pic-go/raw/master/img/image-20210109222413286.png" class="lazy" data-srcset="https://gitee.com/yudu22/pic-go/raw/master/img/image-20210109222413286.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p><ol start="2"><li>PicGo的路径在安装完以后会在命令行里显示，复制一下就行。</li></ol><p>我的整体设置：</p><blockquote><p>C:\Progra~1\nodejs\node.exe C:\Users\用户名\AppData\Roaming\npm\node_modules\picgo\bin\picgo upload</p></blockquote><p>注意Progra~1是Program Files的缩写（取前六位+“~1”），路径不可以带有空格！会报错。</p><p>配置文件因为之前设置过了，所以不改。文件在C:\Users\用户名\.picgo\config.json</p><p>详细设置见前文<a href="https://aoten.ga/technology/6cba23a9dda4/">【博客搭建记录】使用Typora与PicGo打出Combo</a>。</p><blockquote class="blockquote-note blockquote-note__tip"><div class="blockquote-note__header"><div class="blockquote-note__icon"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="16" viewBox="0 0 12 16"><path fill-rule="evenodd" d="M6.5 0C3.48 0 1 2.19 1 5c0 .92.55 2.25 1 3 1.34 2.25 1.78 2.78 2 4v1h5v-1c.22-1.22.66-1.75 2-4 .45-.75 1-2.08 1-3 0-2.81-2.48-5-5.5-5zm3.64 7.48c-.25.44-.47.8-.67 1.11-.86 1.41-1.25 2.06-1.45 3.23-.02.05-.02.11-.02.17H5c0-.06 0-.13-.02-.17-.2-1.17-.59-1.83-1.45-3.23-.2-.31-.42-.67-.67-1.11C2.44 6.78 2 5.65 2 5c0-2.2 2.02-4 4.5-4 1.22 0 2.36.42 3.22 1.19C10.55 2.94 11 3.94 11 5c0 .66-.44 1.78-.86 2.48zM4 14h5c-.23 1.14-1.3 2-2.5 2s-2.27-.86-2.5-2z"></path></svg></div>写在最后的题外话Part。</div><div class="blockquote-note__content"><p>刚接触Hexo的时候，大概选定的主题有Next、Volantis、Suka以及Cards。前两天看到一个用Volantis改的站很漂亮，燃起一点心思。不过看了一下文档马上掐灭了这小火苗，毕竟搭博客的本质是为了写东西，本末倒置要不得啦~。</p></div></blockquote><p>博客搭建记录系列应该就到此为止了。以后也许会为我的每日一首分类专门写一个样式。（毕竟就是为了这个搭的博客，爱得深沉.jpg）</p><p>这里搜集一下系列文章放在一起。</p><p><a href="https://aoten.ga/technology/11aab07a59a8/">【博客搭建记录】使用Gridea和Github Pages搭建个人博客</a></p><p><a href="https://aoten.ga/technology/bd20389dd4b2/">【博客搭建记录】Freenom与Cloudflare</a></p><p><a href="https://aoten.ga/technology/32eb3490d24d/">【博客搭建记录】Hexo的Next主题优化</a></p><p><a href="https://aoten.ga/technology/abd21d162167/">【博客搭建记录】Hexo的Cards主题优化</a></p><p><a href="https://aoten.ga/technology/6cba23a9dda4/">【博客搭建记录】使用Typora与PicGo打出Combo</a></p><p><a href="https://aoten.ga/technology/4fc18a0a7c4c/">【博客搭建记录】Hexo deploy命令突然无法使用</a></p><p><a href="https://aoten.ga/technology/9d4815d0b1c2/">【博客搭建记录】Hexo——如何让文章链接没有中文路径</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 技术 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Hexo </tag>
+            
+            <tag> PicGo </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>【每日一首】拜年</title>
+      <link href="literature/everyday-poem/42517773f957/"/>
+      <url>literature/everyday-poem/42517773f957/</url>
+      
+        <content type="html"><![CDATA[<center>不求见面惟通谒，名纸朝来满敝庐。</center><center>我亦随人投数纸，世情嫌简不嫌虚。</center><p style='text-align:right'>——明代·文征明</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 文学 </category>
+          
+          <category> 每日一首 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 每日一首 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>【博客搭建记录】Hexo——如何让文章链接没有中文路径</title>
+      <link href="technology/9d4815d0b1c2/"/>
+      <url>technology/9d4815d0b1c2/</url>
+      
+        <content type="html"><![CDATA[<p>前文在Next主题优化时曾经修改过permalink设置。事实证明链接设置这种东西应该早一点定下来的，不然后面分享文章容易失效，以后文章多了改起来头发都得薅没。<a id="more"></a></p><p>我在站点Config文件内的 Permalink 设置如下。</p><p><img src="https://raw.githubusercontent.com/TenAo/Pic/master/img/image-20210108022914192.png" class="lazy" data-srcset="https://raw.githubusercontent.com/TenAo/Pic/master/img/image-20210108022914192.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p><p>这样我文章链接就形为</p><blockquote><p>aoten.ga/categories/hash</p></blockquote><p>但是这就有一个问题，我的分类里面都是“文学”、“技术”这类中文路径，这个在生成网址的时候看着是比较难受的。</p><p>比如像这样。</p><p><img src="https://raw.githubusercontent.com/TenAo/Pic/master/img/image-20210108022330768.png" class="lazy" data-srcset="https://raw.githubusercontent.com/TenAo/Pic/master/img/image-20210108022330768.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p><p>心 肺 停 止 。</p><p>不过搜索一下，办法总比问题多。</p><p>我们在Hexo的站点Config文件里进行一个简单的设置。搜索 category_map，添加中文分类对应的英文。子分类也直接写就可以了。我的情况，“每日一首”是“文学”的子分类。如下图。</p><p><img src="https://raw.githubusercontent.com/TenAo/Pic/master/img/image-20210108022110676.png" class="lazy" data-srcset="https://raw.githubusercontent.com/TenAo/Pic/master/img/image-20210108022110676.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p><p>这样修改之后，链接生成就会自动变成英文，比如你可以看看这一篇博文的链接。</p><p>文章创建后，就不要随便更改文章标题、创建时间以及分类了。根据<a href="https://hexo.io/zh-cn/docs/permalinks.html">官方文档</a>，hash值是由文章标题跟创建时间生成的哟。文章id最好也不要随便用，毕竟它*not persistent across <a href="https://hexo.io/zh-cn/docs/commands#clean">cache reset</a>*。</p><p>所以最保险的其实还是按照创建日期来生成链接吧。道理我都懂，但我就是不改（x</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 技术 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Hexo </tag>
+            
+            <tag> Permalink </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>【每日一首】大梦谁先觉</title>
+      <link href="literature/everyday-poem/a030a1a1ba53/"/>
+      <url>literature/everyday-poem/a030a1a1ba53/</url>
+      
+        <content type="html"><![CDATA[<center>大梦谁先觉？平生我自知。</center><center>草堂春睡足，窗外日迟迟。</center><p style='text-align:right'>——明代·罗贯中</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 文学 </category>
+          
+          <category> 每日一首 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 每日一首 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>【博客搭建记录】Hexo deploy命令突然无法使用</title>
+      <link href="technology/4fc18a0a7c4c/"/>
+      <url>technology/4fc18a0a7c4c/</url>
+      
+        <content type="html"><![CDATA[<p>今天写完博客，本来打算deploy一下就洗洗睡了，结果突然提示又要我登录。<a id="more"></a></p><p>检查了一下ssh是没有问题的。</p><p>为什么！搜了一大堆教程。最后参考<a href="https://www.cnblogs.com/xsilence/p/6001938.html">该博文</a>，在站点Config文件内将repo改为</p><blockquote><p><a href="mailto:&#103;&#x69;&#116;&#64;&#x67;&#105;&#x74;&#x68;&#117;&#x62;&#x2e;&#99;&#x6f;&#109;">&#103;&#x69;&#116;&#64;&#x67;&#105;&#x74;&#x68;&#117;&#x62;&#x2e;&#99;&#x6f;&#109;</a>: username/username.github.io.git</p></blockquote><p>而不是之前使用的</p><blockquote><p><a href="https://github.com/username/username.github.io.git">https://github.com/username/username.github.io.git</a></p></blockquote><p>然后就可以了。唉，好麻烦，也不知道是怎么回事，难道是因为今天安装了PicGo？</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 技术 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Github </tag>
+            
+            <tag> Hexo </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>【博客搭建记录】使用Typora与PicGo打出Combo</title>
+      <link href="technology/6cba23a9dda4/"/>
+      <url>technology/6cba23a9dda4/</url>
+      
+        <content type="html"><![CDATA[<ol><li><p>打开Typora偏好设置&gt;图像。</p><p><img src="https://raw.githubusercontent.com/TenAo/Pic/master/img/image-20210107010539290.png" class="lazy" data-srcset="https://raw.githubusercontent.com/TenAo/Pic/master/img/image-20210107010539290.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p><p>因为我经常图方便，调用Windows自带的截图功能，直接粘贴进Typora，不存本地图片，所以这里插入图片时才选择复制到指定路径，没有相关需求的也可以选择上传图片，这样在插入时图片就会自动上传。</p><p>上传服务图方便就选择app了。</p></li><li><p>安装完成，根据提示进行设置。需要去<a href="https://github.com/settings/tokens">Github生成token</a>。</p><p>点击确定保存设置，并设为默认图床。然后在Typora的图像设置里<strong>验证图片上传选项</strong>。验证成功会在repo里上传两张typora的图片。</p></li><li><p>验证成功。进入博文，点击上传所有本地图片。</p><p><img src="https://raw.githubusercontent.com/TenAo/Pic/master/img/2021-01-07_01-26-17.png" class="lazy" data-srcset="https://raw.githubusercontent.com/TenAo/Pic/master/img/2021-01-07_01-26-17.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p><p><img src="https://raw.githubusercontent.com/TenAo/Pic/master/img/image-20210107014303110.png" class="lazy" data-srcset="https://raw.githubusercontent.com/TenAo/Pic/master/img/image-20210107014303110.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p><p>提示上传成功。</p></li></ol><p>使用了一下觉得开App还是很麻烦，决定还是用PicGo-Core(command line)。而且感觉github传图片经常出奇奇怪怪的问题，最常见的比如图片明明传上去了但是Typora里链接并没有自动更换。决定换Gitee试一试。</p><p>参考教程：<a href="https://www.jianshu.com/p/d7bf3f9da6db">https://www.jianshu.com/p/d7bf3f9da6db</a></p><p>简单步骤。</p><ol><li><p>Typora内选择PicGo-Core(command line)，点击下载。</p></li><li><p>将程序加入系统环境变量。位置在C:\Users\用户名\AppData\Roaming\Typora\picgo\win64</p></li><li><p>在cmd内根据提示设置，或者直接Typora内打开config文件设置。（推荐）</p><pre class="language-c#" data-language="c#"><code class="language-c#">&#123;  &quot;picBed&quot;: &#123;    &quot;current&quot;: &quot;gitee&quot;,    &quot;gitee&quot;: &#123;      &quot;repo&quot;: &quot;username&#x2F;仓库名&quot;,      &quot;branch&quot;: &quot;master&quot;,      &quot;token&quot;: &quot;&quot;,      &quot;path&quot;: &quot;img&quot;,      &quot;customPath&quot;: &quot;yearMonth&quot;,      &quot;customUrl&quot;: &quot;&quot;    &#125;,    &quot;uploader&quot;: &quot;gitee&quot;,    &quot;transformer&quot;: &quot;path&quot;  &#125;,  &quot;picgoPlugins&quot;: &#123;    &quot;picgo-plugin-gitee-uploader&quot;: true  &#125;,&#125;</code></pre></li><li><p>验证上传，成功。以及虽然我传图片一般都几十k，但是以防万一还是去gitee开了gitee pages，万一哪天要传我家仓鼠的萌萌Gif呢你说是吧。</p><p>这就可以迅速整一张。（这只不是我家的，是B站UP主<a href="https://space.bilibili.com/26283835/#!/index">南山有怪兽</a>视频里截的，宇宙无敌巨特么可爱嘤嘤嘤）</p><p><img src="https://gitee.com/yudu22/pic-go/raw/master/img/%E6%89%93%E5%93%88%E6%AC%A0.gif" class="lazy" data-srcset="https://gitee.com/yudu22/pic-go/raw/master/img/%E6%89%93%E5%93%88%E6%AC%A0.gif" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p><p>啊这，咋显示不出来？四点几兆也还不算大吧？</p><p>再试一张。</p><p><img src="https://gitee.com/yudu22/pic-go/raw/master/img/37d3d539b6003af3287ea175372ac65c1138b6da.gif" class="lazy" data-srcset="https://gitee.com/yudu22/pic-go/raw/master/img/37d3d539b6003af3287ea175372ac65c1138b6da.gif" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p><p>喵喵喵？？？？</p><p>再整一个。</p><img src="https://gitee.com/yudu22/pic-go/raw/master/img/2020-07-21_01-04-45.png" class="lazy" data-srcset="https://gitee.com/yudu22/pic-go/raw/master/img/2020-07-21_01-04-45.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg==" style="zoom:50%;" /><p>好家伙。gif不能正常显示的意思？</p><p>啊我不管啦！就这样吧。</p><p>。怎么偏偏传了这张图xsk</p><p>猎人什么时候复刊啊，想看酷拉皮卡大美女，嘤嘤嘤。</p></li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> 技术 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Github </tag>
+            
+            <tag> Typora </tag>
+            
+            <tag> PicGo </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>【博客搭建记录】Hexo的Cards主题优化</title>
+      <link href="technology/abd21d162167/"/>
+      <url>technology/abd21d162167/</url>
+      
+        <content type="html"><![CDATA[<p><a href="https://github.com/ChrAlpha/hexo-theme-cards">Cards主题源码</a> <a href="https://theme-cards.ichr.me/">Cards主题文档</a> <a href="https://theme-cards.ichr.me/demo/">官方demo站</a></p><p>赞美大佬，这个主题完美符合我的xp，都不需要怎么改。我先天体运行心律不齐20分钟以示尊敬。</p><blockquote class="blockquote-note blockquote-note__important"><div class="blockquote-note__header"><div class="blockquote-note__icon"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="16" viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></div>版本信息</div><div class="blockquote-note__content"><p>Hexo：5.3.0</p><p>Hexo-Cli：4.2.0</p><p>Cards：1.2.0</p></div></blockquote><ol><li><p>fold标签使用。</p><pre class="language-html" data-language="html"><code class="language-html">&#123;% fold 折叠摘要 %&#125;这是被折叠的文字&#123;% endfold %&#125;</code></pre><details ><summary>折叠效果如下</summary><div class="fold-content"><p>这是被折叠的文字。</p></div></details></li><li><p>note标签使用。</p><pre class="language-html" data-language="html"><code class="language-html">&#123;% note [ type ] 自定义小标题 %&#125;自定义正文&#123;% endnote %&#125;</code></pre><p>type可选填info（蓝）、important（绿）、tip（紫）、caution（黄）、warning（红）。详细示例见<a href="https://theme-cards.ichr.me/demo/2020/06/tag-plugin-note/">官方demo</a>。</p><details ><summary>note效果如下</summary><div class="fold-content"><blockquote class="blockquote-note blockquote-note__info"><div class="blockquote-note__header"><div class="blockquote-note__icon"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="16" viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></div>info</div><div class="blockquote-note__content"></div></blockquote><blockquote class="blockquote-note blockquote-note__important"><div class="blockquote-note__header"><div class="blockquote-note__icon"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="16" viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></div>important</div><div class="blockquote-note__content"></div></blockquote><blockquote class="blockquote-note blockquote-note__tip"><div class="blockquote-note__header"><div class="blockquote-note__icon"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="16" viewBox="0 0 12 16"><path fill-rule="evenodd" d="M6.5 0C3.48 0 1 2.19 1 5c0 .92.55 2.25 1 3 1.34 2.25 1.78 2.78 2 4v1h5v-1c.22-1.22.66-1.75 2-4 .45-.75 1-2.08 1-3 0-2.81-2.48-5-5.5-5zm3.64 7.48c-.25.44-.47.8-.67 1.11-.86 1.41-1.25 2.06-1.45 3.23-.02.05-.02.11-.02.17H5c0-.06 0-.13-.02-.17-.2-1.17-.59-1.83-1.45-3.23-.2-.31-.42-.67-.67-1.11C2.44 6.78 2 5.65 2 5c0-2.2 2.02-4 4.5-4 1.22 0 2.36.42 3.22 1.19C10.55 2.94 11 3.94 11 5c0 .66-.44 1.78-.86 2.48zM4 14h5c-.23 1.14-1.3 2-2.5 2s-2.27-.86-2.5-2z"></path></svg></div>tip</div><div class="blockquote-note__content"></div></blockquote><blockquote class="blockquote-note blockquote-note__caution"><div class="blockquote-note__header"><div class="blockquote-note__icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 0 0 0 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 0 0 .01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z"></path></svg></div>caution</div><div class="blockquote-note__content"></div></blockquote><blockquote class="blockquote-note blockquote-note__warning"><div class="blockquote-note__header"><div class="blockquote-note__icon"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="16" viewBox="0 0 12 16"><path fill-rule="evenodd" d="M5.05.31c.81 2.17.41 3.38-.52 4.31C3.55 5.67 1.98 6.45.9 7.98c-1.45 2.05-1.7 6.53 3.53 7.7-2.2-1.16-2.67-4.52-.3-6.61-.61 2.03.53 3.33 1.94 2.86 1.39-.47 2.3.53 2.27 1.67-.02.78-.31 1.44-1.13 1.81 3.42-.59 4.78-3.42 4.78-5.56 0-2.84-2.53-3.22-1.25-5.61-1.52.13-2.03 1.13-1.89 2.75.09 1.08-1.02 1.8-1.86 1.33-.67-.41-.66-1.19-.06-1.78C8.18 5.31 8.68 2.45 5.05.32L5.03.3l.02.01z"></path></svg></div>warning</div><div class="blockquote-note__content"></div></blockquote></div></details></li><li><p>footer内增加本站运行天数。</p><details ><summary>代码</summary><div class="fold-content"><pre class="language-html" data-language="html"><code class="language-html">&lt;% if (theme.footer.operate_time) &#123; %>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>timeDate<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>载入天数...<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>times<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>载入时分秒...<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">></span></span><span class="token script"><span class="token language-javascript">    <span class="token keyword">var</span> now <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token keyword">function</span> <span class="token function">createtime</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>      <span class="token keyword">var</span> grt<span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token string">"01/01/2021 00:00:00"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>      now<span class="token punctuation">.</span><span class="token function">setTime</span><span class="token punctuation">(</span>now<span class="token punctuation">.</span><span class="token function">getTime</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">+</span><span class="token number">250</span><span class="token punctuation">)</span><span class="token punctuation">;</span>      days <span class="token operator">=</span> <span class="token punctuation">(</span>now <span class="token operator">-</span> grt <span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">1000</span> <span class="token operator">/</span> <span class="token number">60</span> <span class="token operator">/</span> <span class="token number">60</span> <span class="token operator">/</span> <span class="token number">24</span><span class="token punctuation">;</span> dnum <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">floor</span><span class="token punctuation">(</span>days<span class="token punctuation">)</span><span class="token punctuation">;</span>      hours <span class="token operator">=</span> <span class="token punctuation">(</span>now <span class="token operator">-</span> grt <span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">1000</span> <span class="token operator">/</span> <span class="token number">60</span> <span class="token operator">/</span> <span class="token number">60</span> <span class="token operator">-</span> <span class="token punctuation">(</span><span class="token number">24</span> <span class="token operator">*</span> dnum<span class="token punctuation">)</span><span class="token punctuation">;</span> hnum <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">floor</span><span class="token punctuation">(</span>hours<span class="token punctuation">)</span><span class="token punctuation">;</span>      <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token function">String</span><span class="token punctuation">(</span>hnum<span class="token punctuation">)</span><span class="token punctuation">.</span>length <span class="token operator">==</span><span class="token number">1</span> <span class="token punctuation">)</span><span class="token punctuation">&#123;</span>hnum <span class="token operator">=</span> <span class="token string">"0"</span> <span class="token operator">+</span> hnum<span class="token punctuation">;</span><span class="token punctuation">&#125;</span> minutes <span class="token operator">=</span> <span class="token punctuation">(</span>now <span class="token operator">-</span> grt <span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">1000</span> <span class="token operator">/</span><span class="token number">60</span> <span class="token operator">-</span> <span class="token punctuation">(</span><span class="token number">24</span> <span class="token operator">*</span> <span class="token number">60</span> <span class="token operator">*</span> dnum<span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token punctuation">(</span><span class="token number">60</span> <span class="token operator">*</span> hnum<span class="token punctuation">)</span><span class="token punctuation">;</span>      mnum <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">floor</span><span class="token punctuation">(</span>minutes<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token function">String</span><span class="token punctuation">(</span>mnum<span class="token punctuation">)</span><span class="token punctuation">.</span>length <span class="token operator">==</span><span class="token number">1</span> <span class="token punctuation">)</span><span class="token punctuation">&#123;</span>mnum <span class="token operator">=</span> <span class="token string">"0"</span> <span class="token operator">+</span> mnum<span class="token punctuation">;</span><span class="token punctuation">&#125;</span>      seconds <span class="token operator">=</span> <span class="token punctuation">(</span>now <span class="token operator">-</span> grt <span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">1000</span> <span class="token operator">-</span> <span class="token punctuation">(</span><span class="token number">24</span> <span class="token operator">*</span> <span class="token number">60</span> <span class="token operator">*</span> <span class="token number">60</span> <span class="token operator">*</span> dnum<span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token punctuation">(</span><span class="token number">60</span> <span class="token operator">*</span> <span class="token number">60</span> <span class="token operator">*</span> hnum<span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token punctuation">(</span><span class="token number">60</span> <span class="token operator">*</span> mnum<span class="token punctuation">)</span><span class="token punctuation">;</span>      snum <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">round</span><span class="token punctuation">(</span>seconds<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token function">String</span><span class="token punctuation">(</span>snum<span class="token punctuation">)</span><span class="token punctuation">.</span>length <span class="token operator">==</span><span class="token number">1</span> <span class="token punctuation">)</span><span class="token punctuation">&#123;</span>snum <span class="token operator">=</span> <span class="token string">"0"</span> <span class="token operator">+</span> snum<span class="token punctuation">;</span><span class="token punctuation">&#125;</span>      document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">"timeDate"</span><span class="token punctuation">)</span><span class="token punctuation">.</span>innerHTML <span class="token operator">=</span> <span class="token string">"本站已在宇宙中运行 "</span><span class="token operator">+</span>dnum<span class="token operator">+</span><span class="token string">" 天 "</span><span class="token punctuation">;</span>      document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">"times"</span><span class="token punctuation">)</span><span class="token punctuation">.</span>innerHTML <span class="token operator">=</span> hnum <span class="token operator">+</span> <span class="token string">" 小时 "</span> <span class="token operator">+</span> mnum <span class="token operator">+</span> <span class="token string">" 分 "</span> <span class="token operator">+</span> snum <span class="token operator">+</span> <span class="token string">" 秒啦"</span><span class="token punctuation">;</span>    <span class="token punctuation">&#125;</span>    <span class="token function">setInterval</span><span class="token punctuation">(</span><span class="token string">"createtime()"</span><span class="token punctuation">,</span><span class="token number">250</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>&lt;% &#125; %></code></pre></div></details><p>效果如下：</p><p><img src="https://raw.githubusercontent.com/TenAo/Pic/master/img/image-20210104214459318.png" class="lazy" data-srcset="https://raw.githubusercontent.com/TenAo/Pic/master/img/image-20210104214459318.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p></li><li><p>Darkmode颜色调整。</p><blockquote><p>..\themes\cards\source\css\style\_base\darkmode.styl</p></blockquote><pre class="language-stylus" data-language="stylus"><code class="language-stylus"><span class="token comment">/*自行更改*/</span><span class="token property-declaration"><span class="token property">--bg-color</span> <span class="token hexcode">#282828</span></span><span class="token property-declaration"><span class="token property">--bg-content-color</span> <span class="token hexcode">#333333</span></span><span class="token comment">/*更改完毕*/</span></code></pre></li></ol><ol start="5"><li><p>一个bug。开启fancybox后图片显示无法居中。已解决。</p><blockquote><p>..\themes\cards\source\css\style\_pages\post.styl</p></blockquote><details ><summary>代码更改如下</summary><div class="fold-content"><pre class="language-stylus" data-language="stylus"><code class="language-stylus"><span class="token selector">…….post__content</span>    <span class="token selector">p</span>        <span class="token property-declaration"><span class="token property">line-height</span> $lineheight</span>    <span class="token selector">img</span>        <span class="token selector">&amp;.inline</span>            <span class="token property-declaration"><span class="token property">display</span> inline</span>    <span class="token selector">div>img<span class="token punctuation">,</span>p>img<span class="token punctuation">,</span>div>picture>img<span class="token punctuation">,</span>p>picture>img<span class="token punctuation">,</span>a>img</span>        <span class="token property-declaration"><span class="token property">display</span> block</span>        <span class="token property-declaration"><span class="token property">margin</span> auto</span>        <span class="token property-declaration"><span class="token property">border-radius</span> <span class="token number">4</span><span class="token unit">px</span></span>    <span class="token selector">span</span>        <span class="token selector">img</span>            <span class="token property-declaration"><span class="token property">display</span> inline</span>            <span class="token property-declaration"><span class="token property">margin</span> auto</span>……</code></pre><p>在<em>div&gt;img,p&gt;img,div&gt;picture&gt;img,p&gt;picture&gt;img</em>这一串后面加上<strong>a&gt;img</strong>。</p></div></details></li><li><p>搜索界面优化。</p><blockquote><p>..\themes\cards\source\css\style\_functions\search.styl</p></blockquote></li><li><p>文章内链接颜色优化。</p><blockquote><p>..\themes\cards\source\css\style\_base\defines.styl</p><p>..\themes\cards\source\css\style\_pages\post.styl</p></blockquote><details ><summary>代码内容</summary><div class="fold-content"><p>defines.styl文件内添加定义：</p><pre class="language-stylus" data-language="stylus"><code class="language-stylus"><span class="token variable-declaration"><span class="token variable">$color_post_link</span> <span class="token operator">=</span> convert<span class="token punctuation">(</span>hexo-config<span class="token punctuation">(</span><span class="token string">'style.color.post_link_color'</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">||</span> <span class="token hexcode">#a5dff9</span></span></code></pre><p>post.styl 文件内.post__content和.post-entry__content下增加样式：</p><pre class="language-stylus" data-language="stylus"><code class="language-stylus"><span class="token selector"><span class="token comment">/*自行添加*/</span>a</span>    <span class="token property-declaration"><span class="token property">color</span> $color_post_link</span><span class="token comment">/*添加完毕*/</span>  </code></pre><p>post content就是文章界面文章内容的link颜色。post-entry content就是首页的文章内容里的link颜色，即下图的蓝色链接。</p><p>不过这个其实不太用得到，正常人谁在description里放链接啊（ry</p><p><img src="https://raw.githubusercontent.com/TenAo/Pic/master/img/2021-01-05_20-32-16.png" class="lazy" data-srcset="https://raw.githubusercontent.com/TenAo/Pic/master/img/2021-01-05_20-32-16.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p></div></details><p>最后再在主题配置文件内style-&gt;color下新添一个值<em>post_link_color</em>，就可以比较方便地更改颜色了。</p><p><img src="https://raw.githubusercontent.com/TenAo/Pic/master/img/image-20210105201043908.png" class="lazy" data-srcset="https://raw.githubusercontent.com/TenAo/Pic/master/img/image-20210105201043908.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p><p>多说一句，网页设计只要不超过4种颜色，基本上不会丑到哪里去。</p></li><li><p>评论系统使用Gitalk，设置参考<a href="https://theme-cards.ichr.me/third-party/#Gitalk">Cards官方文档</a>。申请Application的时候设置了域名就填写完整域名，不要填原本的仓库link（xxx.github.io），否则无法正常使用。</p><p>使用中遇到一个bug。Darkmode看不到H1~H5的标题文字，正文和H6可以。</p><p><img src="https://raw.githubusercontent.com/TenAo/Pic/master/img/image-20210105215331380.png" class="lazy" data-srcset="https://raw.githubusercontent.com/TenAo/Pic/master/img/image-20210105215331380.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p><p>日间模式是这样的：</p><p><img src="https://raw.githubusercontent.com/TenAo/Pic/master/img/image-20210105215418979.png" class="lazy" data-srcset="https://raw.githubusercontent.com/TenAo/Pic/master/img/image-20210105215418979.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p><p>解决起来不难，自己覆写一下css就行了，不过我懒得写，而且Gitalk的权限申请似乎有点多。目前换成了uttrances。</p><p><a href="https://github.com/apps/utterances">安装界面</a></p><p>安装后在<a href="https://utteranc.es/">该页面</a>进行设置。</p><p>repo：username/username.github.io</p><p>Blog Post  Issue Mapping：建议选择Issue title contains page title，即issue名为页面名称（文章标题）。</p><p>Issue Label：issue标签（选填），必须要已经存在的标签，可以自己去github创建。</p><p>设置完皮肤，copy代码到</p><blockquote><p>..\themes\cards\layout\_partial\post\post-content.ejs</p></blockquote><p>本来打算写一下明暗切换不同css的，想写进plugin的comments里，不过看了一下代码觉得很麻烦就不写了，我一看js代码就头痛。反正我也不用日间模式，太容易瞎了（。</p><p>我很懒的，不要学我。</p><p>评论效果如下：</p><p><img src="https://raw.githubusercontent.com/TenAo/Pic/master/img/image-20210106001229177.png" class="lazy" data-srcset="https://raw.githubusercontent.com/TenAo/Pic/master/img/image-20210106001229177.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p><p>我装完还是去看了一下utterances的申请权限。</p><p>这个是添加APP组件需要的权限。</p><p><img src="https://raw.githubusercontent.com/TenAo/Pic/master/img/image-20210106000009576.png" class="lazy" data-srcset="https://raw.githubusercontent.com/TenAo/Pic/master/img/image-20210106000009576.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p><p>这个是如果要评论，绑定Github账号时申请的权限。</p><p><img src="https://raw.githubusercontent.com/TenAo/Pic/master/img/image-20210106001616747.png" class="lazy" data-srcset="https://raw.githubusercontent.com/TenAo/Pic/master/img/image-20210106001616747.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p><p>前一个还正常，后面这个Act on your behalf看起来还是很危险啊喂。</p><p>实在担心，可以评论完就去<a href="https://github.com/settings/apps/authorizations">这里</a>把权限取消掉。唉这个样式太好看了，不舍得换（。）</p></li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> 技术 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Hexo </tag>
+            
+            <tag> Cards </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>【博客搭建记录】Hexo的Next主题优化</title>
+      <link href="technology/32eb3490d24d/"/>
+      <url>technology/32eb3490d24d/</url>
+      
+        <content type="html"><![CDATA[<blockquote class="blockquote-note blockquote-note__caution"><div class="blockquote-note__header"><div class="blockquote-note__icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 0 0 0 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 0 0 .01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z"></path></svg></div>2021.01.04</div><div class="blockquote-note__content"><p>已经更换了更适合自己的<a href="https://theme-cards.ichr.me/start/">Cards主题</a>，此内容不再更新。</p></div></blockquote><p>Gridea虽然很方便，但还是不太喜欢用客户端，换回Hexo。</p><blockquote class="blockquote-note blockquote-note__important"><div class="blockquote-note__header"><div class="blockquote-note__icon"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="16" viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></div>版本信息</div><div class="blockquote-note__content"><p>Hexo：5.3.0</p><p>Next：7.8.0</p><p>Scheme： Gemini</p></div></blockquote><ol><li><p>设置网站语言。Next主题提供的简体中文的参数应该为zh_CN，即我们需要在站点config文件内设置</p><pre class="language-css" data-language="css"><code class="language-css"><span class="token property">languages</span><span class="token punctuation">:</span> zh_CN</code></pre></li><li><p>使用Hexo+Typora进行图片插入。参考博文：<a href="https://yinyoupoet.github.io/2019/09/03/hexo%E5%8D%9A%E5%AE%A2%E4%B8%AD%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87/">typora + hexo博客中插入图片</a></p></li><li><p>对博文的链接进行优化。参考博文：<a href="https://www.xiemingzhao.com/posts/Hexoblogurloptimize.html">Hexo博客文章链接优化</a></p><p>优化前长这样：</p><p><img src="https://raw.githubusercontent.com/TenAo/Pic/master/img/2021-01-03_06-16-13.png" class="lazy" data-srcset="https://raw.githubusercontent.com/TenAo/Pic/master/img/2021-01-03_06-16-13.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p><p>这个日期跟文章名称，好家伙，血压拉满。</p><p><del>处理如下：</del></p><pre class="language-css" data-language="css"><code class="language-css">npm install hexo-abbrlink --save</code></pre><p><del>在站点Config内设置：</del></p><p><img src="https://raw.githubusercontent.com/TenAo/Pic/master/img/2021-01-03_06-19-14.png" class="lazy" data-srcset="https://raw.githubusercontent.com/TenAo/Pic/master/img/2021-01-03_06-19-14.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p><p><del>会在generate的时候自动在文章内生成一个abbrlink参数值，也可以自己修改这个值，比如本篇博文我就设置为了<em>hexo_optimize</em>。</del></p><p><img src="https://raw.githubusercontent.com/TenAo/Pic/master/img/image-20210103062132643.png" class="lazy" data-srcset="https://raw.githubusercontent.com/TenAo/Pic/master/img/image-20210103062132643.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p><p>试了一下，本地可以跳转链接，同步到Github Pages后就不可以了，懒得去研究，最后还是使用自带的permalink来做，具体参数见<a href="https://hexo.io/zh-cn/docs/permalinks.html">Hexo官方文档</a>，在站点Config文件内修改设置如下。</p><p><img src="https://raw.githubusercontent.com/TenAo/Pic/master/img/image-20210103073035702.png" class="lazy" data-srcset="https://raw.githubusercontent.com/TenAo/Pic/master/img/image-20210103073035702.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p><p>:hash后一定要加/，否则点击链接可能会下载文件，<a href="https://hexo.io/zh-cn/docs/permalinks.html">Hexo官方文档</a>里评论区里找到的解释是：<em>不带后缀名会导致有的web server发送错误的MIME类型，浏览器接收到非HTML的MIME，会默认进行下载</em>。</p><p>PS：如果已经安装了abbrlink，记得npm uninstall hexo-abbrlink，不然以后hexo g还是会自动在Front matter生成随机值。</p></li><li><p>版权协议样式优化。文件位置：</p><blockquote><p>..\themes\next\source\css\_common\components\post\post-copyright.styl</p></blockquote><p><img src="https://raw.githubusercontent.com/TenAo/Pic/master/img/image-20210103064839346.png" class="lazy" data-srcset="https://raw.githubusercontent.com/TenAo/Pic/master/img/image-20210103064839346.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p><p>版权协议内容优化。文件位置：</p><blockquote><p>..\themes\next\layout\_partials\post\post-copyright.swig</p></blockquote></li><li><p>修改内容区域宽度。<a href="https://blog.zuiyu1818.cn/posts/NexT_codewidth.html">参考博文</a></p></li><li><p>链接颜色设置，标题样式优化等。在以下目录（选择自己的scheme，我的是Gemini）末尾添加css代码，覆写layout。</p><blockquote><p>..\themes\next\source\css\_schemes\Gemini\index.styl</p></blockquote><pre class="language-css" data-language="css"><code class="language-css"><span class="token selector">// 文章内链接文本样式.post-body p a</span><span class="token punctuation">&#123;</span>  <span class="token property">color</span><span class="token punctuation">:</span> #0593d3<span class="token punctuation">;</span> //原始链接颜色  <span class="token property">border-bottom</span><span class="token punctuation">:</span> none<span class="token selector">;  &amp;:hover</span> <span class="token punctuation">&#123;</span>    <span class="token property">color</span><span class="token punctuation">:</span> #fc6423<span class="token punctuation">;</span> //鼠标经过颜色    <span class="token property">border-bottom</span><span class="token punctuation">:</span> 1px solid #fc6423<span class="token punctuation">;</span>  <span class="token punctuation">&#125;</span><span class="token punctuation">&#125;</span></code></pre></li></ol><ol start="7"><li><p>首页文章显示概览。在Front Matter中添加description。如下图。</p><p><img src="https://raw.githubusercontent.com/TenAo/Pic/master/img/image-20210104012447140.png" class="lazy" data-srcset="https://raw.githubusercontent.com/TenAo/Pic/master/img/image-20210104012447140.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p><p>同时我想设置主页的文章在<strong>没有description和自动截取的excerpt</strong>的情况下，不显示文章具体内容。</p><p>打开目录</p><blockquote><p>..\themes\next\layout\_macro</p></blockquote><p>将post.swig文件复制一份，重命名为post-new.swig之类的。防止删掉不该删的东西（。）</p><p>打开post-new.swig，control+F搜索<strong>if is_index</strong>，删除下面红框内的内容。我个人习惯是直接点标题进文章的，所以上面的阅读全文按钮也删了。</p><p><img src="https://raw.githubusercontent.com/TenAo/Pic/master/img/2021-01-04_01-50-12.png" class="lazy" data-srcset="https://raw.githubusercontent.com/TenAo/Pic/master/img/2021-01-04_01-50-12.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p><p>如果觉得有点空想要加上标签，可以复制以下内容进行粘贴。（或者直接在footer里复制这段也行，就在往下面拉50行左右的地方）</p><p>自己理一下几个if、elif和endif的配对关系，不要放错了。</p><pre class="language-html" data-language="html"><code class="language-html">&#123;%- if post.tags and post.tags.length %&#125;      &#123;%- if theme.tag_icon %&#125;          &#123;%- set tag_indicate = '<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>i</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>fa fa-tag<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>i</span><span class="token punctuation">></span></span>' %&#125;      &#123;% else %&#125;           &#123;%- set tag_indicate = '#' %&#125;      &#123;%- endif %&#125;      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>post-tags<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>          &#123;%- for tag in post.tags.toArray() %&#125;              <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>&#123;&#123; url_for(tag.path) &#125;&#125;<span class="token punctuation">"</span></span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>tag<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>&#123;&#123; tag_indicate &#125;&#125; &#123;&#123; tag.name &#125;&#125;<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>          &#123;%- endfor %&#125;      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>  &#123;%- endif %&#125;</code></pre><p>自己理一下几个if、elif和endif的配对关系，不要放错了。</p><p>现在我们回到目录</p><blockquote><p>..\themes\next\layout\index.swig</p></blockquote><p>将里面的引用的post.swig改写成我们刚刚的post-new.swig。</p><p>成品暂时长这样，肯定还要改。</p><p><img src="https://raw.githubusercontent.com/TenAo/Pic/master/img/image-20210104023315924.png" class="lazy" data-srcset="https://raw.githubusercontent.com/TenAo/Pic/master/img/image-20210104023315924.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p></li><li><p><del>To do list</del></p></li></ol><ul><li><input disabled="" type="checkbox"> <del>主页post hover动效</del></li><li><input disabled="" type="checkbox"> <del>文章过期提醒</del></li><li><input disabled="" type="checkbox"> <del>左侧区块简化</del></li><li><input disabled="" type="checkbox"> <del>字体设置</del></li><li><input disabled="" type="checkbox"> <del>文字两端对齐</del></li><li><input disabled="" type="checkbox"> <del>引用的样式优化</del></li><li><input disabled="" type="checkbox"> <del>评论系统</del></li><li><input disabled="" type="checkbox"> <del>访客统计？</del></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 技术 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Github </tag>
+            
+            <tag> Hexo </tag>
+            
+            <tag> Next </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>【博客搭建记录】Freenom与Cloudflare</title>
+      <link href="technology/bd20389dd4b2/"/>
+      <url>technology/bd20389dd4b2/</url>
+      
+        <content type="html"><![CDATA[<p>什么叫做白嫖的王！</p><p>简单写一下流程。<a id="more"></a></p><ol><li><p>挂好美国的节点，去<a href="https://www.freenom.com/">freenom</a>白嫖一年的域名。网上教程太多了不详写。<br>比如我注册的是<a href="aoten.ga">aoten.ga</a>。</p></li><li><p>去<a href="https://dash.cloudflare.com/">Cloudflare</a>注册一个账号。注册好了之后就会让你add site。将之前在freenom注册的域名（aoten.ga）填入。<br>后面会有一些服务让你选择，建议先不要选择强行https（包括github里的Enforce HTTPS），有可能会遇到<a href="https://blog.csdn.net/IT_townlet/article/details/102530963">使用https访问网站无法加载静态资源</a>的问题，当然如果你知道怎么解决，选了是坠吼的（猫猫点赞.jpg），我的解决方式参考文末的补充说明。其它的功能根据自己需要来选。</p></li><li><p>到提示Nameservers这一项，进入Freenom网站的<em>MyDomain</em>，点击Management Tools，选择Nameservers，然后点击*Use custom nameservers(enter below)*，复制粘贴。</p></li><li><p>选择好了进入Cloudflare内该站点的SSL选项卡里第一条，选择灵活（第二个）。然后点击边缘证书选项卡，这里看证书有没有验证成功，没有会显示待验证，要等一会。</p></li><li><p>DNS设置参考<a href="https://docs.github.com/en/free-pro-team@latest/github/working-with-github-pages/managing-a-custom-domain-for-your-github-pages-site">Github相关帮助文档</a><br>Cloudflare中DNS设置为<br>Name：@<br>类型：A<br>值<strong>分别</strong>设4个：<br>185.199.108.153<br>185.199.109.153<br>185.199.110.153<br>185.199.111.153<br>以及<br>Name：www<br>类型：A<br>值仍然是分别设上述4个。<br>共计设8条。<br>那么一张图就能清晰解决的事我为什么不截图呢。因为Cloudflare这个CDN国内访问是真的减速，我确认设置没有问题之后就直接换了。<br>白嫖爽到就行，建议不要选（。</p></li><li><p>Github的CNAME设置。<br>因为我是用的Gridea，所以直接在客户端的CNAME里填域名，然后保存设置同步就可以了，其它诸如Hexo之类的可能稍稍复杂一点，问题不大。</p></li><li><p>浏览器输入新域名，好耶！</p><p><img src="https://raw.githubusercontent.com/TenAo/Pic/master/img/1609348680979.png" class="lazy" data-srcset="https://raw.githubusercontent.com/TenAo/Pic/master/img/1609348680979.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p></li></ol><p>补充说明：</p><p>记录一下上文的<a href="https://blog.csdn.net/IT_townlet/article/details/102530963">使用https访问网站无法加载静态资源</a>我个人是怎么解决的，不适用于所有情况。我使用的是Gridea工具，不过改起来其实都大差不差。</p><p>在主题文件夹内的head文件中（C:\Users\用户名\Documents\Gridea\themes\gridea-theme-pure-1.3.2\templates\includes\head.ejs），添加一行</p><pre class="language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">http-equiv</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Content-Security-Policy<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>upgrade-insecure-requests<span class="token punctuation">"</span></span><span class="token punctuation">></span></span></code></pre><p>参考：<a href="https://segmentfault.com/q/10100000058727340">如何在HTTPS 网页中引入HTTP资源： Mixed Content？</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 技术 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Gridea </tag>
+            
+            <tag> Github </tag>
+            
+            <tag> Cloudflare </tag>
+            
+            <tag> Freenom </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>【博客搭建记录】使用Gridea和Github Pages搭建个人博客</title>
+      <link href="technology/11aab07a59a8/"/>
+      <url>technology/11aab07a59a8/</url>
+      
+        <content type="html"><![CDATA[<p>所有步骤在<a href="https://gridea.dev/gridea-start/">Gridea的官方文档</a>里都说得很清楚了，非常简单，四步到位。<a id="more"></a></p><ol><li><p>从<a href="https://github.com/settings/tokens/new">github设置中</a>获取Token并妥善保存。</p></li><li><p>进行Gridea的远程设置。这里出现了一个问题。我填写<em>CNAME</em>后点击同步，又删掉了域名，将<em>CNAME</em>一行留空。重新保存设置，并同步后，发现仍然是自动跳转到错误域名。<br> <img src="https://raw.githubusercontent.com/TenAo/Pic/master/img/1608836665497.png" class="lazy" data-srcset="https://raw.githubusercontent.com/TenAo/Pic/master/img/1608836665497.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="><br> 于是直接进入github该仓库的settings内，下拉到Github Pages部分，将Custom domain里的内容删除并保存，如下图。（以防万一清空了浏览器以及DNS缓存试了一下，可行。）<br> <img src="https://raw.githubusercontent.com/TenAo/Pic/master/img/1608907996010.png" class="lazy" data-srcset="https://raw.githubusercontent.com/TenAo/Pic/master/img/1608907996010.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="><br> 但是！在Gridea中又进行一次同步后，Custom domain里又重新出现了之前的域名信息。<br> 直接删除库里的CNAME文件也不可行，只要重新同步，它总会出现，从不缺席（</p></li></ol><p>最后的解决方法：</p><ol><li>CNAME那里直接填原本的域名<em>username.github.io</em>，仓库的settings部分会提示<blockquote><p>You cannot use CNAMEs ending with github.io, github.com, or github.page. </p></blockquote></li></ol><p>不管就行。<br>2. 白嫖个域名（。）</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 技术 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Gridea </tag>
+            
+            <tag> Github </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>【每日一首】折桂令·风雨登虎丘</title>
+      <link href="literature/everyday-poem/dbcfdd976e7b/"/>
+      <url>literature/everyday-poem/dbcfdd976e7b/</url>
+      
+        <content type="html"><![CDATA[<p>半天风雨如秋。怪石於菟，老树钩娄，苔绣禅阶，尘黏诗壁，云湿经楼。</p><p>琴调冷声闲虎丘，剑光寒影动龙湫。醉眼悠悠，千古恩仇。浪卷胥魂，山锁吴愁。</p><p>——元代·乔吉</p></br><p>虎丘：在江苏苏州市西北，相传春秋时有虎踞丘上三日，故名。</p><p>於菟（wū tú）：虎的别称。</p><p>琴调冷声闲虎丘：虎丘寺塔基，原为晋司徒王珣的琴台，故谓“琴调冷”。</p><p>剑光寒影动龙湫：虎丘有剑池，相传吴王阖庐以宝剑殉葬，后秦始皇开掘找寻，有神龙跃出而成池。湫，深潭。</p><p>胥魂：相传春秋时伍子胥为吴王夫差所杀，精魂不散，成了涛神。</p><p>吴愁：春秋时吴国终为越国所灭，故言。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 文学 </category>
+          
+          <category> 每日一首 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 每日一首 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>【每日一首】双调·水仙子</title>
+      <link href="literature/everyday-poem/415f1fb0676b/"/>
+      <url>literature/everyday-poem/415f1fb0676b/</url>
+      
+        <content type="html"><![CDATA[<p>一夕梵唱一夕秋，一叶轻舟一叶愁。千寻碧湖千寻酒，丝竹慢，唱不休，红颜总是归尘垢。</p><p>听钟十年后，隔雨看小楼，却叫人怎生回头？</p><p>——元代·白朴</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 文学 </category>
+          
+          <category> 每日一首 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 每日一首 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>【每日一首】西江月·世事一场大梦</title>
+      <link href="literature/everyday-poem/fbbb82d835ce/"/>
+      <url>literature/everyday-poem/fbbb82d835ce/</url>
+      
+        <content type="html"><![CDATA[<p>世事一场大梦，人生几度秋凉？夜来风叶已鸣廊。看取眉头鬓上。</p><p>酒贱常愁客少，月明多被云妨。中秋谁与共孤光。把盏凄然北望。</p><p>——宋代·苏轼</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 文学 </category>
+          
+          <category> 每日一首 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 每日一首 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>【每日一首】板桥晓别</title>
+      <link href="literature/everyday-poem/152c72553d38/"/>
+      <url>literature/everyday-poem/152c72553d38/</url>
+      
+        <content type="html"><![CDATA[<p>丁巳重阳前三日，梦亡妇淡妆素服，执手哽咽。语多不复能记。但临别有云：“衔恨愿为天上月，年年犹得向郎圆”。妇素未工诗，不知何以得此也。觉后感赋长调：</p><p>瞬息浮生，薄命如斯，低徊怎忘？记绣榻闲时，并吹红雨，雕阑曲处，同倚斜阳。梦好难留，诗残莫续，赢得更深哭一场。遗容在，只灵飙一转，未许端详。</p><p>重寻碧落茫茫，料短发，朝来定有霜。便人间天上，尘缘未断，春花秋叶，触绪还伤。欲结绸缪，翻惊摇落，减尽荀衣昨日香。真无奈，倩声声邻笛，谱出回肠。</p><p>——清代·纳兰性德</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 文学 </category>
+          
+          <category> 每日一首 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 每日一首 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>【每日一首】板桥晓别</title>
+      <link href="literature/everyday-poem/58c76262c635/"/>
+      <url>literature/everyday-poem/58c76262c635/</url>
+      
+        <content type="html"><![CDATA[<p>丁巳重阳前三日，梦亡妇淡妆素服，执手哽咽。语多不复能记。但临别有云：“衔恨愿为天上月，年年犹得向郎圆”。妇素未工诗，不知何以得此也。觉后感赋长调：</p><p>瞬息浮生，薄命如斯，低徊怎忘？记绣榻闲时，并吹红雨，雕阑曲处，同倚斜阳。梦好难留，诗残莫续，赢得更深哭一场。遗容在，只灵飙一转，未许端详。</p><p>重寻碧落茫茫，料短发，朝来定有霜。便人间天上，尘缘未断，春花秋叶，触绪还伤。欲结绸缪，翻惊摇落，减尽荀衣昨日香。真无奈，倩声声邻笛，谱出回肠。</p><p>——清代·纳兰性德</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 文学 </category>
+          
+          <category> 每日一首 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 每日一首 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>【每日一首】如梦令·正是辘轳金井</title>
+      <link href="literature/everyday-poem/c4d4432d11c1/"/>
+      <url>literature/everyday-poem/c4d4432d11c1/</url>
+      
+        <content type="html"><![CDATA[<p>正是辘轳金井，满砌落花红冷。蓦地一相逢，心事眼波难定。谁省，谁省。从此簟纹灯影。</p><p>——清代·纳兰性德</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 文学 </category>
+          
+          <category> 每日一首 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 每日一首 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>【每日一首】夜游宫·叶下斜阳照水</title>
+      <link href="literature/everyday-poem/3b100458ee65/"/>
+      <url>literature/everyday-poem/3b100458ee65/</url>
+      
+        <content type="html"><![CDATA[<p>叶下斜阳照水。卷轻浪、沈沈千里。桥上酸风射眸子。立多时，看黄昏，灯火市。</p><p>古屋寒窗底。听几片、井桐飞坠。不恋单衾再三起。有谁知，为萧娘，书一纸。</p><p>——宋代·周邦彦</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 文学 </category>
+          
+          <category> 每日一首 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 每日一首 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>【每日一首】鹤冲天·黄金榜上</title>
+      <link href="literature/everyday-poem/e2339bdb056d/"/>
+      <url>literature/everyday-poem/e2339bdb056d/</url>
+      
+        <content type="html"><![CDATA[<p>黄金榜上，偶失龙头望。明代暂遗贤，如何向。未遂风云便，争不恣狂荡。何须论得丧？才子词人，自是白衣卿相。</p><p>烟花巷陌，依约丹青屏障。幸有意中人，堪寻访。且恁偎红倚翠，风流事，平生畅。青春都一饷。忍把浮名，换了浅斟低唱！</p><p>——宋代·柳永</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 文学 </category>
+          
+          <category> 每日一首 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 每日一首 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>【每日一首】赠程处士</title>
+      <link href="literature/everyday-poem/bacd558ac067/"/>
+      <url>literature/everyday-poem/bacd558ac067/</url>
+      
+        <content type="html"><![CDATA[<p>百年长扰扰，万事悉悠悠。</p><p>日光随意落，河水任情流。</p><p>礼乐囚姬旦，诗书缚孔丘。</p><p>不如高枕枕，时取醉消愁。</p><p>——唐代·王绩</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 文学 </category>
+          
+          <category> 每日一首 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 每日一首 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>【每日一首】鸟</title>
+      <link href="literature/everyday-poem/dff86c5ff45e/"/>
+      <url>literature/everyday-poem/dff86c5ff45e/</url>
+      
+        <content type="html"><![CDATA[<p>谁道群生性命微？一般骨肉一般皮。</p><p>劝君莫打枝头鸟，子在巢中望母归。</p><p>——唐代·白居易</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 文学 </category>
+          
+          <category> 每日一首 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 每日一首 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>【每日一首】如梦令·万帐穹庐人醉</title>
+      <link href="literature/everyday-poem/84572b74ad44/"/>
+      <url>literature/everyday-poem/84572b74ad44/</url>
+      
+        <content type="html"><![CDATA[<p>万帐穹庐人醉，星影摇摇欲坠，归梦隔狼河，又被河声搅碎。还睡、还睡，解道醒来无味。</p><p>——清代·纳兰性德</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 文学 </category>
+          
+          <category> 每日一首 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 每日一首 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>【每日一首】虞美人·春花秋月何时了</title>
+      <link href="literature/everyday-poem/29364bd1c25c/"/>
+      <url>literature/everyday-poem/29364bd1c25c/</url>
+      
+        <content type="html"><![CDATA[<p>春花秋月何时了，往事知多少。小楼昨夜又东风，故国不堪回首月明中。</p><p>雕阑玉砌应犹在，只是朱颜改。问君能有几多愁，恰似一江春水向东流。</p><p>——五代·李煜</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 文学 </category>
+          
+          <category> 每日一首 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 每日一首 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>【每日一首】乌夜啼·昨夜风兼雨</title>
+      <link href="literature/everyday-poem/e7eb13f662b6/"/>
+      <url>literature/everyday-poem/e7eb13f662b6/</url>
+      
+        <content type="html"><![CDATA[<p>昨夜风兼雨，帘帏飒飒秋声。烛残漏断频欹枕，起坐不能平。　</p><p>世事漫随流水，算来一梦浮生。醉乡路稳宜频到，此外不堪行。</p><p>——五代·李煜</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 文学 </category>
+          
+          <category> 每日一首 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 每日一首 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>【每日一首】菩萨蛮·回廊远砌生秋草</title>
+      <link href="literature/everyday-poem/5ef95223e4c3/"/>
+      <url>literature/everyday-poem/5ef95223e4c3/</url>
+      
+        <content type="html"><![CDATA[<p>回廊远砌生秋草，梦魂千里青门道。鹦鹉怨长更，碧笼金锁横。</p><p>罗帏中夜起，霜月清如水。玉露不成圆，宝筝悲断弦。</p><p>——五代·冯延巳</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 文学 </category>
+          
+          <category> 每日一首 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 每日一首 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>【每日一首】长命女·春日宴</title>
+      <link href="literature/everyday-poem/82ec7a76848f/"/>
+      <url>literature/everyday-poem/82ec7a76848f/</url>
+      
+        <content type="html"><![CDATA[<p>春日宴，绿酒一杯歌一遍。再拜陈三愿：一愿郎君千岁，二愿妾身常健，三愿如同梁上燕，岁岁长相见。</p><p>——五代·冯延巳</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 文学 </category>
+          
+          <category> 每日一首 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 每日一首 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>【每日一首】凭阑人·金陵道中</title>
+      <link href="literature/everyday-poem/091812fce72a/"/>
+      <url>literature/everyday-poem/091812fce72a/</url>
+      
+        <content type="html"><![CDATA[<p>瘦马驮诗天一涯，倦鸟呼愁村数家。扑头飞柳花，与人添鬓华。</p><p>——元代·乔吉</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 文学 </category>
+          
+          <category> 每日一首 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 每日一首 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>【每日一首】唐多令·柳絮</title>
+      <link href="literature/everyday-poem/4a22eaf28300/"/>
+      <url>literature/everyday-poem/4a22eaf28300/</url>
+      
+        <content type="html"><![CDATA[<p>粉堕百花洲，香残燕子楼。一团团、逐队成球。飘泊亦如人命薄，空缱绻，说风流。</p><p>草木也知愁，韶华竟白头。叹今生、谁舍谁收！嫁与东风春不管，凭尔去，忍淹留！</p><p>——清代·曹雪芹</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 文学 </category>
+          
+          <category> 每日一首 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 每日一首 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>【每日一首】唐多令·柳絮</title>
+      <link href="literature/everyday-poem/a45a891cef10/"/>
+      <url>literature/everyday-poem/a45a891cef10/</url>
+      
+        <content type="html"><![CDATA[<p>粉堕百花洲，香残燕子楼。一团团、逐队成球。飘泊亦如人命薄，空缱绻，说风流。</p><p>草木也知愁，韶华竟白头。叹今生、谁舍谁收！嫁与东风春不管，凭尔去，忍淹留！</p><p>——清代·曹雪芹</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 文学 </category>
+          
+          <category> 每日一首 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 每日一首 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>【每日一首】更漏子·玉炉香</title>
+      <link href="literature/everyday-poem/9dc54c6d09e7/"/>
+      <url>literature/everyday-poem/9dc54c6d09e7/</url>
+      
+        <content type="html"><![CDATA[<p>玉炉香，红蜡泪，偏照画堂秋思。眉翠薄，鬓云残，夜长衾枕寒。</p><p>梧桐树，三更雨，不道离情正苦。一叶叶，一声声，空阶滴到明。</p><p>——唐代·温庭筠</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 文学 </category>
+          
+          <category> 每日一首 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 每日一首 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>【每日一首】赤枣子·风淅淅</title>
+      <link href="literature/everyday-poem/b50cc5ae7633/"/>
+      <url>literature/everyday-poem/b50cc5ae7633/</url>
+      
+        <content type="html"><![CDATA[<p>风淅淅，雨纤纤。难怪春愁细细添。</p><p>记不分明疑是梦，梦来还隔一重帘。</p><p>——清代·纳兰性德</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 文学 </category>
+          
+          <category> 每日一首 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 每日一首 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>【每日一首】苏幕遮·草</title>
+      <link href="literature/everyday-poem/e6e14c80531d/"/>
+      <url>literature/everyday-poem/e6e14c80531d/</url>
+      
+        <content type="html"><![CDATA[<p>露堤平，烟墅杳。乱碧萋萋，雨后江天晓。</p><p>独有庾郎年最少。窣地春袍，嫩色宜相照。</p><p>接长亭，迷远道。堪怨王孙，不记归期早。</p><p>落尽梨花春又了。满地残阳，翠色和烟老。</p><p>——宋代·梅尧臣</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 文学 </category>
+          
+          <category> 每日一首 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 每日一首 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>【每日一首】长相思</title>
+      <link href="literature/everyday-poem/22f8852ee22f/"/>
+      <url>literature/everyday-poem/22f8852ee22f/</url>
+      
+        <content type="html"><![CDATA[<p>红满枝，绿满枝，宿雨厌厌睡起迟，闲庭花影移。</p><p>忆归期，数归期。梦见虽多相见稀，相逢知几时。</p><p>——五代·冯延巳</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 文学 </category>
+          
+          <category> 每日一首 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 每日一首 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>【每日一首】浣溪沙·伏雨朝寒愁不胜</title>
+      <link href="literature/everyday-poem/6e97ac88c450/"/>
+      <url>literature/everyday-poem/6e97ac88c450/</url>
+      
+        <content type="html"><![CDATA[<p>伏雨朝寒愁不胜，那能还傍杏花行。去年高摘斗轻盈。</p><p>漫惹炉烟双袖紫，空将酒晕一衫青。人间何处问多情。</p><p>——清代·纳兰性德</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 文学 </category>
+          
+          <category> 每日一首 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 每日一首 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>【每日一首】醉太平·寒食</title>
+      <link href="literature/everyday-poem/dfb1a456bb7b/"/>
+      <url>literature/everyday-poem/dfb1a456bb7b/</url>
+      
+        <content type="html"><![CDATA[<p>声声啼乳鸦，生叫破韶华。夜深微雨润堤沙，香风万家。</p><p>画楼洗净鸳鸯瓦，彩绳半湿秋千架。觉来红日上窗纱，听街头卖杏花。</p><p>——元代·王元鼎</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 文学 </category>
+          
+          <category> 每日一首 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 每日一首 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>【每日一首】春日</title>
+      <link href="literature/everyday-poem/174ebc0b50fd/"/>
+      <url>literature/everyday-poem/174ebc0b50fd/</url>
+      
+        <content type="html"><![CDATA[<p>阴阴溪曲绿交加，小雨翻萍上浅沙。</p><p>鹅鸭不知春去尽，争随流水趁桃花。</p><p>——宋代·晁冲之</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 文学 </category>
+          
+          <category> 每日一首 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 每日一首 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>【每日一首】大德歌·冬景</title>
+      <link href="literature/everyday-poem/d8cb4f2c32cf/"/>
+      <url>literature/everyday-poem/d8cb4f2c32cf/</url>
+      
+        <content type="html"><![CDATA[<p>雪粉华，舞梨花，再不见烟村四五家。密洒堪图画，看疏林噪晚鸦。黄芦掩映清江下，斜缆着钓鱼艖。</p><p>——元代·关汉卿</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 文学 </category>
+          
+          <category> 每日一首 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 每日一首 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>【每日一首】念奴娇·天南地北</title>
+      <link href="literature/everyday-poem/255533e10f3e/"/>
+      <url>literature/everyday-poem/255533e10f3e/</url>
+      
+        <content type="html"><![CDATA[<p>天南地北，问乾坤，何处可容狂客？借得山东烟水寨，来买凤城春色。翠袖围香，绛绡笼雪，一笑千金值。神仙体态，薄幸如何消得？</p><p>想芦叶滩头，蓼花汀畔，皓月空凝碧。六六雁行连八九，只待金鸡消息。义胆包天，忠肝盖地，四海无人识。离愁万种，醉乡一夜头白。</p><p>——明代·施耐庵</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 文学 </category>
+          
+          <category> 每日一首 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 每日一首 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>【每日一首】南乡子·春情</title>
+      <link href="literature/everyday-poem/983826cceb3c/"/>
+      <url>literature/everyday-poem/983826cceb3c/</url>
+      
+        <content type="html"><![CDATA[<p>晚景落琼杯，照眼云山翠作堆。认得岷峨春雪浪，初来，万顷蒲萄涨渌醅。</p><p>春雨暗阳台，乱洒歌楼湿粉腮。一阵东风来卷地，吹回，落照江天一半开。</p><p>——宋代·苏轼</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 文学 </category>
+          
+          <category> 每日一首 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 每日一首 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>【每日一首】西江月·阻风三峰下</title>
+      <link href="literature/everyday-poem/2d33788bd529/"/>
+      <url>literature/everyday-poem/2d33788bd529/</url>
+      
+        <content type="html"><![CDATA[<p>满载一船秋色，平铺十里湖光。波神留我看斜阳，放起鳞鳞细浪。</p><p>明日风回更好，今宵露宿何妨。水晶宫里奏霓裳，准拟岳阳楼上。</p><p>——宋代·张孝祥</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 文学 </category>
+          
+          <category> 每日一首 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 每日一首 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>【每日一首】泗州东城晚望</title>
+      <link href="literature/everyday-poem/591920c41824/"/>
+      <url>literature/everyday-poem/591920c41824/</url>
+      
+        <content type="html"><![CDATA[<p>渺渺孤城白水环，舳舻人语夕霏间。</p><p>林梢一抹青如画，应是淮流转处山。</p><p>——宋代·秦观</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 文学 </category>
+          
+          <category> 每日一首 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 每日一首 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>【每日一首】示圆阇梨偈</title>
+      <link href="literature/everyday-poem/de7c7669e0be/"/>
+      <url>literature/everyday-poem/de7c7669e0be/</url>
+      
+        <content type="html"><![CDATA[<p>我有明珠一颗，久被尘劳关锁。</p><p>而今尘尽光生，照破青山万朵。</p><p>——宋代·释心月</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 文学 </category>
+          
+          <category> 每日一首 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 每日一首 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>【每日一首】南乡子·重九涵辉楼呈徐君猷</title>
+      <link href="literature/everyday-poem/fff2edd1f213/"/>
+      <url>literature/everyday-poem/fff2edd1f213/</url>
+      
+        <content type="html"><![CDATA[<p>霜降水痕收。浅碧鳞鳞露远洲。酒力渐消风力软，飕飕。破帽多情却恋头。</p><p>佳节若为酬。但把清尊断送秋。万事到头都是梦，休休。明日黄花蝶也愁。</p><p>——宋代·苏轼</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 文学 </category>
+          
+          <category> 每日一首 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 每日一首 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>【每日一首】临江仙·寒柳</title>
+      <link href="literature/everyday-poem/a3928d48025c/"/>
+      <url>literature/everyday-poem/a3928d48025c/</url>
+      
+        <content type="html"><![CDATA[<p>飞絮飞花何处是，层冰积雪摧残，疏疏一树五更寒。爱他明月好，憔悴也相关。</p><p>最是繁丝摇落后，转教人忆春山。湔裙梦断续应难。西风多少恨，吹不散眉弯。</p><p>——清代·纳兰性德</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 文学 </category>
+          
+          <category> 每日一首 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 每日一首 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>【每日一首】少年游·长安古道马迟迟</title>
+      <link href="literature/everyday-poem/d61b7e931518/"/>
+      <url>literature/everyday-poem/d61b7e931518/</url>
+      
+        <content type="html"><![CDATA[<p>长安古道马迟迟，高柳乱蝉嘶。夕阳岛外，秋风原上，目断四天垂。</p><p>归云一去无踪迹，何处是前期？狎兴生疏，酒徒萧索，不似少年时。</p><p>——宋代·柳永</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 文学 </category>
+          
+          <category> 每日一首 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 每日一首 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+  
+  
+</search>
