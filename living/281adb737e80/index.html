@@ -33,10 +33,10 @@
     <!-- meta -->
 
 
-<title>【博客搭建记录】Hexo deploy命令突然无法使用 | 道</title>
+<title>将网易云歌单导入Spotify | 道</title>
 
 
-    <meta name="keywords" content="Github, Hexo">
+    <meta name="keywords" content="效率, Spotify, 音乐">
 
 
 
@@ -148,12 +148,12 @@
 
 <div class="post-title">
     <h1 class="post-title__text">
-        【博客搭建记录】Hexo deploy命令突然无法使用
+        将网易云歌单导入Spotify
     </h1>
     <div class="post-title__meta">
-        <a href="/archives/2021/01/" class="post-meta__date button">2021-01-07</a>
+        <a href="/archives/2021/01/" class="post-meta__date button">2021-01-11</a>
         
-    <span class="separate-dot"></span><a href="/categories/technology/" class="button">技术</a>
+    <span class="separate-dot"></span><a href="/categories/living/" class="button">生活</a>
 
  
         
@@ -200,7 +200,7 @@
     </div>
     <script>
         (() => {
-            var update = Date.parse("2021-01-08"),
+            var update = Date.parse("2021-01-12"),
                 date = new Date(),
                 now = date.getTime(),
                 expire = now - update,
@@ -213,17 +213,41 @@
     </script>
 </div>
     <div class="post__content">
-        <p>今天写完博客，本来打算deploy一下就洗洗睡了，结果突然提示又要我登录。<a id="more"></a></p>
-<p>检查了一下ssh是没有问题的。</p>
-<p>为什么！搜了一大堆教程。最后参考<a target="_blank" rel="noopener" href="https://www.cnblogs.com/xsilence/p/6001938.html">该博文</a>，在站点Config文件内将repo改为</p>
-<blockquote>
-<p><a href="mailto:&#x67;&#105;&#x74;&#64;&#103;&#105;&#116;&#104;&#x75;&#98;&#46;&#x63;&#111;&#109;">&#x67;&#105;&#x74;&#64;&#103;&#105;&#116;&#104;&#x75;&#98;&#46;&#x63;&#111;&#109;</a>: username/username.github.io.git</p>
-</blockquote>
-<p>而不是之前使用的</p>
-<blockquote>
-<p><a target="_blank" rel="noopener" href="https://github.com/username/username.github.io.git">https://github.com/username/username.github.io.git</a></p>
-</blockquote>
-<p>然后就可以了。唉，好麻烦，也不知道是怎么回事，难道是因为今天安装了PicGo？</p>
+        <p>Spotify、Apple Music还有Youtube Music各有各的优点，综合一下优缺点，暂时决定选择Spotify。</p>
+<p>反正歌单已经导出来了，大不了以后换一家，我无所畏惧.jpg</p>
+<p>步骤：</p>
+<ol>
+<li><p>歌单导出。</p>
+<p>歌单里歌比较少的话（500首以内）可以直接使用 <a target="_blank" rel="noopener" href="https://spot.uselesses.com/#/auth/">uselesses工具</a>，歌曲多的话需要付个十几块。可以花钱省事。</p>
+<p>如果不想付钱，歌曲数目又上千，可以借助下面的工具。</p>
+<p>网易云的网页版有限制歌曲显示条数，不解锁只能导出1000条，所以需要先解锁限制。</p>
+<p>a. <a target="_blank" rel="noopener" href="https://greasyfork.org/zh-CN/scripts/406054-%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90%E6%98%BE%E7%A4%BA%E5%AE%8C%E6%95%B4%E6%AD%8C%E5%8D%95">解锁1000条限制的油猴脚本</a></p>
+<p>b. <a target="_blank" rel="noopener" href="https://github.com/c4rO-0/TampermonkeyScript/tree/master/Mexporter">导出txt格式歌单的油猴脚本</a></p>
+<p>安装这两个脚本。进入油猴的管理界面检查设置，注意一下2必须在1的上层。（比如a的位置为1，那么b的位置要大于1）</p>
+<p><img src="https://gitee.com/yudu22/pic-go/raw/master/img/image-20210111205548830.png" class="lazy" data-srcset="https://gitee.com/yudu22/pic-go/raw/master/img/image-20210111205548830.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<p>然后就可以在歌单页面进行导出了。</p>
+<p><img src="https://gitee.com/yudu22/pic-go/raw/master/img/image-20210111211010662.png" class="lazy" data-srcset="https://gitee.com/yudu22/pic-go/raw/master/img/image-20210111211010662.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+</li>
+<li><p>导入Spotify（或者也支持其它网站比如Youtube Music）：</p>
+<p><a target="_blank" rel="noopener" href="https://www.tunemymusic.com/zh-cn/#step1">https://www.tunemymusic.com/zh-cn/#step1</a> （2000首限制，需要重复导入）</p>
+<p><a target="_blank" rel="noopener" href="https://www.spotlistr.com/search/textbox">https://www.spotlistr.com/search/textbox</a>  （截止本文发布时无限制）</p>
+<p>网上搜一搜，类似网站挺多，需要自己筛选不收费的。根据提示进行上传即可。</p>
+<p>Spotify的Playlist允许歌曲重复，鉴于使用TuneMyMusic可能会多次导入，提示一下，Spotify Windows端可以 Ctrl+C全选，然后把一个Playlist的歌Add到另一个Playlist。</p>
+<p>如果重复导入导致Playlist里歌曲重复，附一个删除重复歌曲的工具：<a target="_blank" rel="noopener" href="https://spotify-dedup.com/">https://spotify-dedup.com/</a></p>
+</li>
+<li><p>为了安全，转完歌单后去Spotify移除刚刚授予的权限：<a target="_blank" rel="noopener" href="https://www.spotify.com/hk-en/account/apps/">https://www.spotify.com/hk-en/account/apps/</a></p>
+</li>
+</ol>
+<blockquote class="blockquote-note blockquote-note__important"><div class="blockquote-note__header"><div class="blockquote-note__icon"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="16" viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></div>碎碎念</div><div class="blockquote-note__content"><p>大概mia了一眼，TuneMyMusic 2000首导入了644首，Spotlistr没限制但导入也只有543首，嚯。</p>
+<p>不过共同点就是，包括东方同人曲在内的日文歌几 乎 全 灭。</p>
+<p>凑活用吧就，要我为流行乐建本地音乐库是不太可能了233，我foobar2000基本上只有听东方无损的时候才打开。</p>
+</div></blockquote>
+
+<p>Spotify和Youtube Music的音质：</p>
+<p><a target="_blank" rel="noopener" href="https://support.spotify.com/tw/article/high-quality-streaming/">Spotify</a></p>
+<p><a target="_blank" rel="noopener" href="https://support.google.com/youtubemusic/answer/9076559?hl=zh-Hans#zippy=%2C%E4%BD%BF%E7%94%A8-wlan-%E6%97%B6%E7%9A%84%E9%9F%B3%E8%B4%A8">Youtube Music</a></p>
+<p>Youtube曲库肯定更全，可能是最全的了我觉得，1000首导入了831首。但音质稍逊一筹，而且不太符合我的使用习惯。</p>
+<p>最重要的是，歌名格式真的逼死强迫症，用不下去。如果有更好的代替品请务必告诉我。</p>
 
     </div>
     
@@ -235,7 +259,7 @@
             <strong>
                 本文链接：
             </strong>
-            <a href="https://aoten.ga/technology/4fc18a0a7c4c/">https://aoten.ga/technology/4fc18a0a7c4c/</a>
+            <a href="https://aoten.ga/living/281adb737e80/">https://aoten.ga/living/281adb737e80/</a>
         </p>
         
             <strong>
@@ -245,38 +269,24 @@
         
     </div>
  
-    <div class="post-footer__meta"><p>更新于 2021-01-08</p></div> 
-    <div class="post-meta__cats"><a href="/categories/technology/" class="post-cats__link button">技术</a><a href="/tags/Github/" class="post-tags__link button"># Github</a><a href="/tags/Hexo/" class="post-tags__link button"># Hexo</a></div> 
+    <div class="post-footer__meta"><p>更新于 2021-01-12</p></div> 
+    <div class="post-meta__cats"><a href="/categories/living/" class="post-cats__link button">生活</a><a href="/tags/Efficiency/" class="post-tags__link button"># 效率</a><a href="/tags/Spotify/" class="post-tags__link button"># Spotify</a><a href="/tags/Music/" class="post-tags__link button"># 音乐</a></div> 
 </article>
 
 
     <div class="nav">
         <div class="nav__prev">
             
-                <a href="/literature/everyday-poem/a030a1a1ba53/" class="nav__link">
-                    <div>
-                        <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" width="24" height="24"><path d="M589.088 790.624L310.464 512l278.624-278.624 45.248 45.248L400.96 512l233.376 233.376z" fill="#808080"></path></svg>
-                    </div>
-                    <div>
-                        <div class="nav__label">
-                            Previous Post
-                        </div>
-                        <div class="nav__title">
-                            【每日一首】大梦谁先觉
-                        </div>
-                    </div>
-                </a>
-            
         </div>
         <div class="nav__next">
             
-                <a href="/technology/6cba23a9dda4/" class="nav__link">
+                <a href="/living/53c7e6c4e8b3/" class="nav__link">
                     <div>
                         <div class="nav__label">
                             Next Post
                         </div>
                         <div class="nav__title">
-                            【博客搭建记录】使用Typora与PicGo打出Combo
+                            开始学习双拼输入！
                         </div>
                     </div>
                     <div>
