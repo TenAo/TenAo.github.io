@@ -222,7 +222,7 @@
       <link href="technology/4fc18a0a7c4c/"/>
       <url>technology/4fc18a0a7c4c/</url>
       
-        <content type="html"><![CDATA[<p>今天写完博客，本来打算deploy一下就洗洗睡了，结果突然提示又要我登录。<a id="more"></a></p><p>检查了一下ssh是没有问题的。</p><p>为什么！搜了一大堆教程。最后参考<a href="https://www.cnblogs.com/xsilence/p/6001938.html">该博文</a>，在站点Config文件内将repo改为</p><blockquote><p><a href="mailto:&#103;&#x69;&#116;&#x40;&#103;&#x69;&#116;&#x68;&#x75;&#x62;&#46;&#x63;&#x6f;&#109;">&#103;&#x69;&#116;&#x40;&#103;&#x69;&#116;&#x68;&#x75;&#x62;&#46;&#x63;&#x6f;&#109;</a>: username/username.github.io.git</p></blockquote><p>而不是之前使用的</p><blockquote><p><a href="https://github.com/username/username.github.io.git">https://github.com/username/username.github.io.git</a></p></blockquote><p>然后就可以了。唉，好麻烦，也不知道是怎么回事，难道是因为今天安装了PicGo？</p>]]></content>
+        <content type="html"><![CDATA[<p>今天写完博客，本来打算deploy一下就洗洗睡了，结果突然提示又要我登录。<a id="more"></a></p><p>检查了一下ssh是没有问题的。</p><p>为什么！搜了一大堆教程。最后参考<a href="https://www.cnblogs.com/xsilence/p/6001938.html">该博文</a>，在站点Config文件内将repo改为</p><blockquote><p><a href="mailto:&#103;&#105;&#x74;&#x40;&#x67;&#x69;&#x74;&#x68;&#117;&#x62;&#x2e;&#x63;&#x6f;&#109;">&#103;&#105;&#x74;&#x40;&#x67;&#x69;&#x74;&#x68;&#117;&#x62;&#x2e;&#x63;&#x6f;&#109;</a>: username/username.github.io.git</p></blockquote><p>而不是之前使用的</p><blockquote><p><a href="https://github.com/username/username.github.io.git">https://github.com/username/username.github.io.git</a></p></blockquote><p>然后就可以了。唉，好麻烦，也不知道是怎么回事，难道是因为今天安装了PicGo？</p>]]></content>
       
       
       <categories>
@@ -470,8 +470,8 @@
     
     <entry>
       <title>【每日一首】板桥晓别</title>
-      <link href="literature/everyday-poem/152c72553d38/"/>
-      <url>literature/everyday-poem/152c72553d38/</url>
+      <link href="literature/everyday-poem/58c76262c635/"/>
+      <url>literature/everyday-poem/58c76262c635/</url>
       
         <content type="html"><![CDATA[<p>丁巳重阳前三日，梦亡妇淡妆素服，执手哽咽。语多不复能记。但临别有云：“衔恨愿为天上月，年年犹得向郎圆”。妇素未工诗，不知何以得此也。觉后感赋长调：</p><p>瞬息浮生，薄命如斯，低徊怎忘？记绣榻闲时，并吹红雨，雕阑曲处，同倚斜阳。梦好难留，诗残莫续，赢得更深哭一场。遗容在，只灵飙一转，未许端详。</p><p>重寻碧落茫茫，料短发，朝来定有霜。便人间天上，尘缘未断，春花秋叶，触绪还伤。欲结绸缪，翻惊摇落，减尽荀衣昨日香。真无奈，倩声声邻笛，谱出回肠。</p><p>——清代·纳兰性德</p>]]></content>
       
@@ -497,8 +497,8 @@
     
     <entry>
       <title>【每日一首】板桥晓别</title>
-      <link href="literature/everyday-poem/58c76262c635/"/>
-      <url>literature/everyday-poem/58c76262c635/</url>
+      <link href="literature/everyday-poem/152c72553d38/"/>
+      <url>literature/everyday-poem/152c72553d38/</url>
       
         <content type="html"><![CDATA[<p>丁巳重阳前三日，梦亡妇淡妆素服，执手哽咽。语多不复能记。但临别有云：“衔恨愿为天上月，年年犹得向郎圆”。妇素未工诗，不知何以得此也。觉后感赋长调：</p><p>瞬息浮生，薄命如斯，低徊怎忘？记绣榻闲时，并吹红雨，雕阑曲处，同倚斜阳。梦好难留，诗残莫续，赢得更深哭一场。遗容在，只灵飙一转，未许端详。</p><p>重寻碧落茫茫，料短发，朝来定有霜。便人间天上，尘缘未断，春花秋叶，触绪还伤。欲结绸缪，翻惊摇落，减尽荀衣昨日香。真无奈，倩声声邻笛，谱出回肠。</p><p>——清代·纳兰性德</p>]]></content>
       
