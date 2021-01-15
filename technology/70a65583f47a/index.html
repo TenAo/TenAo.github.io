@@ -36,7 +36,7 @@
 <title>使用jsDelivr的CDN给Github图床加速 | 道</title>
 
 
-    <meta name="keywords" content="Github, jsDelivr">
+    <meta name="keywords" content="Github, jsDelivr, CDN">
 
 
 
@@ -213,15 +213,17 @@
     </script>
 </div>
     <div class="post__content">
-        <p>因为自己现在已经是开机自动释放魔法了，所以一直都没发现之前的文章因为使用了Github图床，如果裸身是加载不出来图片的？？</p>
-<p>我现在是用Gitee来当图床，速度还可以，暂时没打算换，但是得把之前的图片链接更新一下。</p>
+        <p>我设置开机自动释放魔法有段时间了，所以一直没发现之前的文章因为使用了Github图床，裸身是加载不出来图片的。（可能是DNS污染？最起码我这边不行）</p>
+<p>博客目前利用Gitee来做图床，速度还可以，暂时没打算换，但是得把之前的Github的图片链接更新一下。</p>
 <p>加速前的链接样式：</p>
-<p><a target="_blank" rel="noopener" href="https://raw.githubusercontent.com/TenAo/Pic/master/img/xxx.png">https://raw.githubusercontent.com/TenAo/Pic/master/img/xxx.png</a></p>
+<pre class="language-none"><code class="language-none">https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;TenAo&#x2F;Pic&#x2F;master&#x2F;img&#x2F;xxx.png</code></pre>
 <p>加速后的链接样式：</p>
-<p><a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/TenAo/Pic/img/xxx.png">https://cdn.jsdelivr.net/gh/TenAo/Pic/img/xxx.png</a></p>
+<pre class="language-none"><code class="language-none">https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;gh&#x2F;TenAo&#x2F;Pic&#x2F;img&#x2F;xxx.png</code></pre>
 <p>打开文章。Ctrl + F </p>
-<p>将 <a target="_blank" rel="noopener" href="https://raw.githubusercontent.com/TenAo/Pic/master/img/">https://raw.githubusercontent.com/TenAo/Pic/master/img/</a> 全部替换为 </p>
-<p><a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/TenAo/Pic/img/">https://cdn.jsdelivr.net/gh/TenAo/Pic/img/</a></p>
+<pre class="language-none"><code class="language-none">将 
+https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;TenAo&#x2F;Pic&#x2F;master&#x2F;img&#x2F; 
+全部替换为 
+https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;gh&#x2F;TenAo&#x2F;Pic&#x2F;img&#x2F;</code></pre>
 <p>完事儿！</p>
 <p>马克几个支持Github的免费CDN备用。</p>
 <p><a target="_blank" rel="noopener" href="https://gitcdn.link/">https://gitcdn.link/</a></p>
@@ -251,7 +253,7 @@
     </div>
  
     <div class="post-footer__meta"><p>更新于 2021-01-15</p></div> 
-    <div class="post-meta__cats"><a href="/categories/technology/" class="post-cats__link button">技术</a><a href="/tags/Github/" class="post-tags__link button"># Github</a><a href="/tags/jsDelivr/" class="post-tags__link button"># jsDelivr</a></div> 
+    <div class="post-meta__cats"><a href="/categories/technology/" class="post-cats__link button">技术</a><a href="/tags/Github/" class="post-tags__link button"># Github</a><a href="/tags/jsDelivr/" class="post-tags__link button"># jsDelivr</a><a href="/tags/CDN/" class="post-tags__link button"># CDN</a></div> 
 </article>
 
 
