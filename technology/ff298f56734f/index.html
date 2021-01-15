@@ -200,7 +200,7 @@
     </div>
     <script>
         (() => {
-            var update = Date.parse("2021-01-13"),
+            var update = Date.parse("2021-01-15"),
                 date = new Date(),
                 now = date.getTime(),
                 expire = now - update,
@@ -229,16 +229,16 @@
 </li>
 <li><p>对博文的链接进行优化。参考博文：<a target="_blank" rel="noopener" href="https://www.xiemingzhao.com/posts/Hexoblogurloptimize.html">Hexo博客文章链接优化</a></p>
 <p>优化前长这样：</p>
-<p><img src="https://raw.githubusercontent.com/TenAo/Pic/master/img/2021-01-03_06-16-13.png" class="lazy" data-srcset="https://raw.githubusercontent.com/TenAo/Pic/master/img/2021-01-03_06-16-13.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<p><img src="https://cdn.jsdelivr.net/gh/TenAo/Pic/img/2021-01-03_06-16-13.png" class="lazy" data-srcset="https://cdn.jsdelivr.net/gh/TenAo/Pic/img/2021-01-03_06-16-13.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
 <p>这个日期跟文章名称，好家伙，血压拉满。</p>
 <p><del>处理如下：</del></p>
 <pre class="language-css" data-language="css"><code class="language-css">npm install hexo-abbrlink --save</code></pre>
 <p><del>在站点Config内设置：</del></p>
-<p><img src="https://raw.githubusercontent.com/TenAo/Pic/master/img/2021-01-03_06-19-14.png" class="lazy" data-srcset="https://raw.githubusercontent.com/TenAo/Pic/master/img/2021-01-03_06-19-14.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<p><img src="https://cdn.jsdelivr.net/gh/TenAo/Pic/img/2021-01-03_06-19-14.png" class="lazy" data-srcset="https://cdn.jsdelivr.net/gh/TenAo/Pic/img/2021-01-03_06-19-14.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
 <p><del>会在generate的时候自动在文章内生成一个abbrlink参数值，也可以自己修改这个值，比如本篇博文我就设置为了<em>hexo_optimize</em>。</del></p>
-<p><img src="https://raw.githubusercontent.com/TenAo/Pic/master/img/image-20210103062132643.png" class="lazy" data-srcset="https://raw.githubusercontent.com/TenAo/Pic/master/img/image-20210103062132643.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<p><img src="https://cdn.jsdelivr.net/gh/TenAo/Pic/img/image-20210103062132643.png" class="lazy" data-srcset="https://cdn.jsdelivr.net/gh/TenAo/Pic/img/image-20210103062132643.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
 <p>试了一下，本地可以跳转链接，同步到Github Pages后就不可以了，懒得去研究，最后还是使用自带的permalink来做，具体参数见<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/permalinks.html">Hexo官方文档</a>，在站点Config文件内修改设置如下。</p>
-<p><img src="https://raw.githubusercontent.com/TenAo/Pic/master/img/image-20210103073035702.png" class="lazy" data-srcset="https://raw.githubusercontent.com/TenAo/Pic/master/img/image-20210103073035702.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<p><img src="https://cdn.jsdelivr.net/gh/TenAo/Pic/img/image-20210103073035702.png" class="lazy" data-srcset="https://cdn.jsdelivr.net/gh/TenAo/Pic/img/image-20210103073035702.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
 <p>:hash后一定要加/，否则点击链接可能会下载文件，<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/permalinks.html">Hexo官方文档</a>里评论区里找到的解释是：<em>不带后缀名会导致有的web server发送错误的MIME类型，浏览器接收到非HTML的MIME，会默认进行下载</em>。</p>
 <p>PS：如果已经安装了abbrlink，记得npm uninstall hexo-abbrlink，不然以后hexo g还是会自动在Front matter生成随机值。</p>
 </li>
@@ -246,7 +246,7 @@
 <blockquote>
 <p>..\themes\next\source\css\_common\components\post\post-copyright.styl</p>
 </blockquote>
-<p><img src="https://raw.githubusercontent.com/TenAo/Pic/master/img/image-20210103064839346.png" class="lazy" data-srcset="https://raw.githubusercontent.com/TenAo/Pic/master/img/image-20210103064839346.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<p><img src="https://cdn.jsdelivr.net/gh/TenAo/Pic/img/image-20210103064839346.png" class="lazy" data-srcset="https://cdn.jsdelivr.net/gh/TenAo/Pic/img/image-20210103064839346.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
 <p>版权协议内容优化。文件位置：</p>
 <blockquote>
 <p>..\themes\next\layout\_partials\post\post-copyright.swig</p>
@@ -273,7 +273,7 @@
 </ol>
 <ol start="7">
 <li><p>首页文章显示概览。在Front Matter中添加description。如下图。</p>
-<p><img src="https://raw.githubusercontent.com/TenAo/Pic/master/img/image-20210104012447140.png" class="lazy" data-srcset="https://raw.githubusercontent.com/TenAo/Pic/master/img/image-20210104012447140.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<p><img src="https://cdn.jsdelivr.net/gh/TenAo/Pic/img/image-20210104012447140.png" class="lazy" data-srcset="https://cdn.jsdelivr.net/gh/TenAo/Pic/img/image-20210104012447140.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
 <p>同时我想设置主页的文章在<strong>没有description和自动截取的excerpt</strong>的情况下，不显示文章具体内容。</p>
 <p>打开目录</p>
 <blockquote>
@@ -281,7 +281,7 @@
 </blockquote>
 <p>将post.swig文件复制一份，重命名为post-new.swig之类的。防止删掉不该删的东西（。）</p>
 <p>打开post-new.swig，control+F搜索<strong>if is_index</strong>，删除下面红框内的内容。我个人习惯是直接点标题进文章的，所以上面的阅读全文按钮也删了。</p>
-<p><img src="https://raw.githubusercontent.com/TenAo/Pic/master/img/2021-01-04_01-50-12.png" class="lazy" data-srcset="https://raw.githubusercontent.com/TenAo/Pic/master/img/2021-01-04_01-50-12.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<p><img src="https://cdn.jsdelivr.net/gh/TenAo/Pic/img/2021-01-04_01-50-12.png" class="lazy" data-srcset="https://cdn.jsdelivr.net/gh/TenAo/Pic/img/2021-01-04_01-50-12.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
 <p>如果觉得有点空想要加上标签，可以复制以下内容进行粘贴。（或者直接在footer里复制这段也行，就在往下面拉50行左右的地方）</p>
 <p>自己理一下几个if、elif和endif的配对关系，不要放错了。</p>
 <pre class="language-html" data-language="html"><code class="language-html">&#123;%- if post.tags and post.tags.length %&#125;
@@ -305,7 +305,7 @@
 </blockquote>
 <p>将里面的引用的post.swig改写成我们刚刚的post-new.swig。</p>
 <p>成品暂时长这样，肯定还要改。</p>
-<p><img src="https://raw.githubusercontent.com/TenAo/Pic/master/img/image-20210104023315924.png" class="lazy" data-srcset="https://raw.githubusercontent.com/TenAo/Pic/master/img/image-20210104023315924.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<p><img src="https://cdn.jsdelivr.net/gh/TenAo/Pic/img/image-20210104023315924.png" class="lazy" data-srcset="https://cdn.jsdelivr.net/gh/TenAo/Pic/img/image-20210104023315924.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
 </li>
 <li><p><del>To do list</del></p>
 </li>
@@ -331,7 +331,7 @@
             <strong>
                 本文链接：
             </strong>
-            <a href="https://aoten.ga/technology/32eb3490d24d/">https://aoten.ga/technology/32eb3490d24d/</a>
+            <a href="https://aoten.ga/technology/ff298f56734f/">https://aoten.ga/technology/ff298f56734f/</a>
         </p>
         
             <strong>
@@ -341,7 +341,7 @@
         
     </div>
  
-    <div class="post-footer__meta"><p>更新于 2021-01-13</p></div> 
+    <div class="post-footer__meta"><p>更新于 2021-01-15</p></div> 
     <div class="post-meta__cats"><a href="/categories/technology/" class="post-cats__link button">技术</a><a href="/tags/Github/" class="post-tags__link button"># Github</a><a href="/tags/Hexo/" class="post-tags__link button"># Hexo</a><a href="/tags/Next/" class="post-tags__link button"># Next</a></div> 
 </article>
 
@@ -349,7 +349,7 @@
     <div class="nav">
         <div class="nav__prev">
             
-                <a href="/technology/abd21d162167/" class="nav__link">
+                <a href="/technology/90fd8b8b12ce/" class="nav__link">
                     <div>
                         <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" width="24" height="24"><path d="M589.088 790.624L310.464 512l278.624-278.624 45.248 45.248L400.96 512l233.376 233.376z" fill="#808080"></path></svg>
                     </div>
@@ -366,7 +366,7 @@
         </div>
         <div class="nav__next">
             
-                <a href="/technology/bd20389dd4b2/" class="nav__link">
+                <a href="/technology/e608584dd348/" class="nav__link">
                     <div>
                         <div class="nav__label">
                             Next Post

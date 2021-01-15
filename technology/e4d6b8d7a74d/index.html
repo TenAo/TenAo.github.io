@@ -33,10 +33,10 @@
     <!-- meta -->
 
 
-<title>【博客搭建记录】Hexo deploy命令突然无法使用 | 道</title>
+<title>【博客搭建记录】在主页隐藏特定分类或标签的文章/PicGo-Core上传图片顺序出错问题 | 道</title>
 
 
-    <meta name="keywords" content="Github, Hexo">
+    <meta name="keywords" content="Hexo, PicGo">
 
 
 
@@ -148,10 +148,10 @@
 
 <div class="post-title">
     <h1 class="post-title__text">
-        【博客搭建记录】Hexo deploy命令突然无法使用
+        【博客搭建记录】在主页隐藏特定分类或标签的文章/PicGo-Core上传图片顺序出错问题
     </h1>
     <div class="post-title__meta">
-        <a href="/archives/2021/01/" class="post-meta__date button">2021-01-07</a>
+        <a href="/archives/2021/01/" class="post-meta__date button">2021-01-09</a>
         
     <span class="separate-dot"></span><a href="/categories/technology/" class="button">技术</a>
 
@@ -200,7 +200,7 @@
     </div>
     <script>
         (() => {
-            var update = Date.parse("2021-01-08"),
+            var update = Date.parse("2021-01-14"),
                 date = new Date(),
                 now = date.getTime(),
                 expire = now - update,
@@ -213,17 +213,60 @@
     </script>
 </div>
     <div class="post__content">
-        <p>今天写完博客，本来打算deploy一下就洗洗睡了，结果突然提示又要我登录。<a id="more"></a></p>
-<p>检查了一下ssh是没有问题的。</p>
-<p>为什么！搜了一大堆教程。最后参考<a target="_blank" rel="noopener" href="https://www.cnblogs.com/xsilence/p/6001938.html">该博文</a>，在站点Config文件内将repo改为</p>
+        <blockquote class="blockquote-note blockquote-note__info"><div class="blockquote-note__header"><div class="blockquote-note__icon"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="16" viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></div>Hexo——在主页隐藏特定分类或标签的文章</div><div class="blockquote-note__content"><p>因为我有一周背五天诗词的习惯，所以博客内有个<a href="https://aoten.ga/categories/literature/everyday-poem/">每日一首</a>栏目，虽然实质上是每周五首，甚至有时候摸鱼不背（x</p>
+<p>这个分类下只是我的背诗记录，没有必要让它显示在首页。要怎么解决这个问题呢？</p>
+</div></blockquote>
+
+<p>搜索了一下相关的插件。有 <a target="_blank" rel="noopener" href="https://github.com/printempw/hexo-hide-posts/blob/master/README_ZH.md">hexo-hide-posts</a>，但这个插件是为了增加私密性，而且似乎需要每篇文章单独设置，不太符合我的需求。所以还是决定使用 hexo-generator-index2 插件。</p>
+<p>使用步骤参考 <a target="_blank" rel="noopener" href="https://github.com/Jamling/hexo-generator-index2/blob/master/README_zh.md">插件官方文档</a>。</p>
+<p>个人设置。目前只在exclude内填入相关tag就好。</p>
+<img src="https://gitee.com/yudu22/pic-go/raw/master/img/image-20210109204946121.png" class="lazy" data-srcset="https://gitee.com/yudu22/pic-go/raw/master/img/image-20210109204946121.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg==" style="zoom:80%;" />
+
+<p>设置完后，发现网站名称的显示出现了问题，如下图。</p>
+<p><img src="https://gitee.com/yudu22/pic-go/raw/master/img/image-20210109213355487.png" class="lazy" data-srcset="https://gitee.com/yudu22/pic-go/raw/master/img/image-20210109213355487.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<p>查看cmd，发现里面提示 index = false，而原本的generator中 index = true。</p>
+<p><img src="https://gitee.com/yudu22/pic-go/raw/master/img/image-20210109213718924.png" class="lazy" data-srcset="https://gitee.com/yudu22/pic-go/raw/master/img/image-20210109213718924.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<p>那么我们在设置里添上一行 index = true。</p>
+<p><img src="https://gitee.com/yudu22/pic-go/raw/master/img/image-20210109213831949.png" class="lazy" data-srcset="https://gitee.com/yudu22/pic-go/raw/master/img/image-20210109213831949.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<p>重新hexo s，问题解决。</p>
+<p><img src="https://gitee.com/yudu22/pic-go/raw/master/img/image-20210109213925938.png" class="lazy" data-srcset="https://gitee.com/yudu22/pic-go/raw/master/img/image-20210109213925938.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<p>希望hexo以后可以添加上相关功能吧，还有文章置顶之类的，都还挺常用。不过我目前用不上，就不去折腾了。</p>
+<blockquote class="blockquote-note blockquote-note__info"><div class="blockquote-note__header"><div class="blockquote-note__icon"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="16" viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></div>PicGo上传图片顺序出错问题</div><div class="blockquote-note__content"><p>今天使用Typora+PicGo-Core+Gitee，发现如果以“上传所有本地图片”方式上传的话，图片顺序会有问题啊啊啊啊啊——！</p>
+</div></blockquote>
+
+<p>去搜了一下相关issue，似乎已经在1.4.9版本修复了该问题。</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/PicGo/PicGo-Core/issues/40">https://github.com/PicGo/PicGo-Core/issues/40</a></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/PicGo/PicGo-Core/commit/2bf1ed9">https://github.com/PicGo/PicGo-Core/commit/2bf1ed9</a></p>
+<p>我心想不对啊，我刚刚安装的PicGo，那难道不是最新版？进Typora一看，显示PicGo-Core已安装最新版本1.4.7。哦对这个好像是打包后的版本。</p>
+<p>行吧，那趁热打铁把这个问题解决掉。存一个安装记录。参考自<a target="_blank" rel="noopener" href="https://www.cnblogs.com/Run2948/p/13408419.html">该博文</a>。</p>
+<p>Typora设置，上传服务选择Custom Command</p>
+<p>命令格式： <strong>[your node path] [your picgo path] upload</strong></p>
+<ol>
+<li>查看node路径。</li>
+</ol>
+<p><img src="https://gitee.com/yudu22/pic-go/raw/master/img/image-20210109222413286.png" class="lazy" data-srcset="https://gitee.com/yudu22/pic-go/raw/master/img/image-20210109222413286.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p>
+<ol start="2">
+<li>PicGo的路径在安装完以后会在命令行里显示，复制一下就行。</li>
+</ol>
+<p>我的整体设置：</p>
 <blockquote>
-<p><a href="mailto:&#103;&#x69;&#116;&#x40;&#x67;&#x69;&#x74;&#x68;&#x75;&#x62;&#46;&#x63;&#111;&#109;">&#103;&#x69;&#116;&#x40;&#x67;&#x69;&#x74;&#x68;&#x75;&#x62;&#46;&#x63;&#111;&#109;</a>: username/username.github.io.git</p>
+<p>C:\Progra~1\nodejs\node.exe C:\Users\用户名\AppData\Roaming\npm\node_modules\picgo\bin\picgo upload</p>
 </blockquote>
-<p>而不是之前使用的</p>
-<blockquote>
-<p><a target="_blank" rel="noopener" href="https://github.com/username/username.github.io.git">https://github.com/username/username.github.io.git</a></p>
-</blockquote>
-<p>然后就可以了。唉，好麻烦，也不知道是怎么回事，难道是因为今天安装了PicGo？</p>
+<p>注意Progra~1是Program Files的缩写（取前六位+“~1”），路径不可以带有空格！会报错。</p>
+<p>配置文件因为之前设置过了，所以不改。文件在C:\Users\用户名\.picgo\config.json</p>
+<p>详细设置见前文<a href="https://aoten.ga/technology/6cba23a9dda4/">【博客搭建记录】使用Typora与PicGo打出Combo</a>。</p>
+<blockquote class="blockquote-note blockquote-note__tip"><div class="blockquote-note__header"><div class="blockquote-note__icon"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="16" viewBox="0 0 12 16"><path fill-rule="evenodd" d="M6.5 0C3.48 0 1 2.19 1 5c0 .92.55 2.25 1 3 1.34 2.25 1.78 2.78 2 4v1h5v-1c.22-1.22.66-1.75 2-4 .45-.75 1-2.08 1-3 0-2.81-2.48-5-5.5-5zm3.64 7.48c-.25.44-.47.8-.67 1.11-.86 1.41-1.25 2.06-1.45 3.23-.02.05-.02.11-.02.17H5c0-.06 0-.13-.02-.17-.2-1.17-.59-1.83-1.45-3.23-.2-.31-.42-.67-.67-1.11C2.44 6.78 2 5.65 2 5c0-2.2 2.02-4 4.5-4 1.22 0 2.36.42 3.22 1.19C10.55 2.94 11 3.94 11 5c0 .66-.44 1.78-.86 2.48zM4 14h5c-.23 1.14-1.3 2-2.5 2s-2.27-.86-2.5-2z"></path></svg></div>写在最后的题外话Part。</div><div class="blockquote-note__content"><p>刚接触Hexo的时候，大概选定的主题有Next、Volantis、Suka以及Cards。前两天看到一个用Volantis改的站很漂亮，燃起一点心思。不过看了一下文档马上掐灭了这小火苗，毕竟搭博客的本质是为了写东西，本末倒置要不得啦~。</p>
+</div></blockquote>
+
+<p>博客搭建记录系列应该就到此为止了。以后也许会为我的每日一首分类专门写一个样式。（毕竟就是为了这个搭的博客，爱得深沉.jpg）</p>
+<p>这里搜集一下系列文章放在一起。</p>
+<p><a href="https://aoten.ga/technology/11aab07a59a8/">【博客搭建记录】使用Gridea和Github Pages搭建个人博客</a></p>
+<p><a href="https://aoten.ga/technology/bd20389dd4b2/">【博客搭建记录】Freenom与Cloudflare</a></p>
+<p><a href="https://aoten.ga/technology/32eb3490d24d/">【博客搭建记录】Hexo的Next主题优化</a></p>
+<p><a href="https://aoten.ga/technology/abd21d162167/">【博客搭建记录】Hexo的Cards主题优化</a></p>
+<p><a href="https://aoten.ga/technology/6cba23a9dda4/">【博客搭建记录】使用Typora与PicGo打出Combo</a></p>
+<p><a href="https://aoten.ga/technology/4fc18a0a7c4c/">【博客搭建记录】Hexo deploy命令突然无法使用</a></p>
+<p><a href="https://aoten.ga/technology/9d4815d0b1c2/">【博客搭建记录】Hexo——如何让文章链接没有中文路径</a></p>
 
     </div>
     
@@ -235,7 +278,7 @@
             <strong>
                 本文链接：
             </strong>
-            <a href="https://aoten.ga/technology/4fc18a0a7c4c/">https://aoten.ga/technology/4fc18a0a7c4c/</a>
+            <a href="https://aoten.ga/technology/e4d6b8d7a74d/">https://aoten.ga/technology/e4d6b8d7a74d/</a>
         </p>
         
             <strong>
@@ -245,15 +288,15 @@
         
     </div>
  
-    <div class="post-footer__meta"><p>更新于 2021-01-08</p></div> 
-    <div class="post-meta__cats"><a href="/categories/technology/" class="post-cats__link button">技术</a><a href="/tags/Github/" class="post-tags__link button"># Github</a><a href="/tags/Hexo/" class="post-tags__link button"># Hexo</a></div> 
+    <div class="post-footer__meta"><p>更新于 2021-01-14</p></div> 
+    <div class="post-meta__cats"><a href="/categories/technology/" class="post-cats__link button">技术</a><a href="/tags/Hexo/" class="post-tags__link button"># Hexo</a><a href="/tags/PicGo/" class="post-tags__link button"># PicGo</a></div> 
 </article>
 
 
     <div class="nav">
         <div class="nav__prev">
             
-                <a href="/literature/everyday-poem/a030a1a1ba53/" class="nav__link">
+                <a href="/living/53c7e6c4e8b3/" class="nav__link">
                     <div>
                         <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" width="24" height="24"><path d="M589.088 790.624L310.464 512l278.624-278.624 45.248 45.248L400.96 512l233.376 233.376z" fill="#808080"></path></svg>
                     </div>
@@ -262,7 +305,7 @@
                             Previous Post
                         </div>
                         <div class="nav__title">
-                            【每日一首】大梦谁先觉
+                            开始学习双拼输入！
                         </div>
                     </div>
                 </a>
@@ -270,13 +313,13 @@
         </div>
         <div class="nav__next">
             
-                <a href="/technology/6cba23a9dda4/" class="nav__link">
+                <a href="/literature/everyday-poem/42517773f957/" class="nav__link">
                     <div>
                         <div class="nav__label">
                             Next Post
                         </div>
                         <div class="nav__title">
-                            【博客搭建记录】使用Typora与PicGo打出Combo
+                            【每日一首】拜年
                         </div>
                     </div>
                     <div>

@@ -33,8 +33,10 @@
     <!-- meta -->
 
 
-<title>标签：Freenom | 道</title>
+<title>【博客搭建记录】Hexo deploy命令突然无法使用 | 道</title>
 
+
+    <meta name="keywords" content="Github, Hexo">
 
 
 
@@ -58,6 +60,14 @@
     
     
     
+    
+        <link rel="stylesheet" id="hl-default-theme" href="https://cdn.jsdelivr.net/npm/prismjs@1.21.0/themes/prism.min.css" media="none" onload="if(getComputedStyle(document.documentElement).getPropertyValue('--color-mode').indexOf('dark')===-1)this.media='all'">
+        
+            <link rel="stylesheet" id="hl-dark-theme" href="https://cdn.jsdelivr.net/npm/prismjs@1.21.0/themes/prism-tomorrow.min.css" media="none" onload="if(getComputedStyle(document.documentElement).getPropertyValue('--color-mode').indexOf('dark')!==-1)this.media='all'">
+        
+    
+    
+
 
      
     <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
@@ -133,59 +143,163 @@
 </header>
 
 
-    <div class="cover">
-        <div class="cover__logo">
-            
-                <img no-lazy alt="author Image" class="cover__avatar" src="/icons/avatar.png">
-            
-        </div>
-        
-        
-            <div class="cover__intro">
-                <p>明日风回更好，今宵露宿何妨</p>
- 
-            </div>
-        
-    </div>
+            <main class="main">
+    
 
-            
-
-    
-        <main class="main">
-            
-    <div class="post-list">
+<div class="post-title">
+    <h1 class="post-title__text">
+        【博客搭建记录】Hexo deploy命令突然无法使用
+    </h1>
+    <div class="post-title__meta">
+        <a href="/archives/2021/01/" class="post-meta__date button">2021-01-07</a>
         
-            
-                <div class='post-entry content-card'>
-                    <div class="post-entry__header"></div>
-<div class="post-entry__content">
-    <h2 class="post-entry__title">
-        【博客搭建记录】Freenom与Cloudflare
-    </h2>
-    
-        <p>什么叫做白嫖的王！</p>
-<p>简单写一下流程。
-    
-</div>
-<div class="post-entry__meta">
-    <a href="/archives/2020/12/" class="post-meta__date button">2020-12-30</a>
-    
     <span class="separate-dot"></span><a href="/categories/technology/" class="button">技术</a>
 
  
+        
+    
+     
+    <span id="busuanzi_container_page_pv" hidden>
+        <span class="separate-dot"></span>
+        <span></span>
+        <span id="busuanzi_value_page_pv"></span>
+        <span>Views</span>
+    </span>
+
+
+
+ 
+
+ 
+    </div>
 </div>
-<div class="post-entry__tags"><a href="/tags/Gridea/" class="post-tags__link button"># Gridea</a><a href="/tags/Github/" class="post-tags__link button"># Github</a><a href="/tags/Cloudflare/" class="post-tags__link button"># Cloudflare</a><a href="/tags/Freenom/" class="post-tags__link button"># Freenom</a></div> 
-<a href="/technology/e608584dd348/" class="post-entry__link">【博客搭建记录】Freenom与Cloudflare</a>
-                </div>
+
+
+    <aside class="post-side">
+        <div class="post-side__toc">
             
+        </div>
+    </aside>
+    <a class="btn-toc button" id="btn-toc" tabindex="0">
+        <svg viewBox="0 0 1024 1024" width="32" height="32" xmlns="http://www.w3.org/2000/svg">
+            <path d="M128 256h64V192H128zM320 256h576V192H320zM128 544h64v-64H128zM320 544h576v-64H320zM128 832h64v-64H128zM320 832h576v-64H320z" fill="currentColor"></path>
+        </svg>
+    </a>
+    <div class="toc-menus" id="toc-menus">
+        <div class="toc-title">文章目录</div>
         
     </div>
+
+
+<article class="post content-card">
+    <div class="post__header">
+    <div class="post__expire" id="post-expired-notify">
+        <p>
+            本文最后更新于 &lt;span id=&#34;expire-date&#34;&gt;&lt;/span&gt; 天前，文中部分描述可能已经过时。
+        </p>
+    </div>
+    <script>
+        (() => {
+            var update = Date.parse("2021-01-14"),
+                date = new Date(),
+                now = date.getTime(),
+                expire = now - update,
+                expire_days = Math.floor(expire/(24*3600*1000));
+            if (expire_days >= 30) {
+                document.querySelectorAll('#expire-date')[0].innerHTML = expire_days;
+                document.querySelectorAll('#post-expired-notify')[0].style.display = 'block';
+            }
+        })();
+    </script>
+</div>
+    <div class="post__content">
+        <p>今天写完博客，本来打算deploy一下就洗洗睡了，结果突然提示又要我登录。<a id="more"></a></p>
+<p>检查了一下ssh是没有问题的。</p>
+<p>为什么！搜了一大堆教程。最后参考<a target="_blank" rel="noopener" href="https://www.cnblogs.com/xsilence/p/6001938.html">该博文</a>，在站点Config文件内将repo改为</p>
+<pre class="language-none"><code class="language-none">git@github.com: username&#x2F;username.github.io.git</code></pre>
+<p>而不是之前使用的</p>
+<pre class="language-none"><code class="language-none">https:&#x2F;&#x2F;github.com&#x2F;username&#x2F;username.github.io.git</code></pre>
+<p>然后就可以了。唉，好麻烦，也不知道是怎么回事，难道是因为今天安装了PicGo？</p>
+
+    </div>
     
+    <div class="post__license">
+        <p>
+            <strong>本文作者：</strong>AoTen
+        </p>
+        <p>
+            <strong>
+                本文链接：
+            </strong>
+            <a href="https://aoten.ga/technology/3d632b314b3f/">https://aoten.ga/technology/3d632b314b3f/</a>
+        </p>
+        
+            <strong>
+                <p>版权声明：本博客文章除【每日一首】栏目外，默认使用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">CC BY-NC-SA 4.0</a> 协议进行许可，使用时请注意遵守协议。</p>
+
+            </strong>
+        
+    </div>
+ 
+    <div class="post-footer__meta"><p>更新于 2021-01-14</p></div> 
+    <div class="post-meta__cats"><a href="/categories/technology/" class="post-cats__link button">技术</a><a href="/tags/Github/" class="post-tags__link button"># Github</a><a href="/tags/Hexo/" class="post-tags__link button"># Hexo</a></div> 
+</article>
 
 
-        </main>
-    
+    <div class="nav">
+        <div class="nav__prev">
+            
+                <a href="/literature/everyday-poem/a030a1a1ba53/" class="nav__link">
+                    <div>
+                        <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" width="24" height="24"><path d="M589.088 790.624L310.464 512l278.624-278.624 45.248 45.248L400.96 512l233.376 233.376z" fill="#808080"></path></svg>
+                    </div>
+                    <div>
+                        <div class="nav__label">
+                            Previous Post
+                        </div>
+                        <div class="nav__title">
+                            【每日一首】大梦谁先觉
+                        </div>
+                    </div>
+                </a>
+            
+        </div>
+        <div class="nav__next">
+            
+                <a href="/technology/ba4db2226c38/" class="nav__link">
+                    <div>
+                        <div class="nav__label">
+                            Next Post
+                        </div>
+                        <div class="nav__title">
+                            【博客搭建记录】使用Typora与PicGo打出Combo
+                        </div>
+                    </div>
+                    <div>
+                        <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" width="24" height="24"><path d="M434.944 790.624l-45.248-45.248L623.04 512l-233.376-233.376 45.248-45.248L713.568 512z" fill="#808080"></path></svg>
+                    </div>
+                </a>
+            
+        </div>
+    </div>
 
+
+<!--  -->
+
+
+    <script src="https://utteranc.es/client.js"
+        repo="TenAo/tenao.github.io"
+        issue-term="title"
+        label="utterances"
+        theme="preferred-color-scheme"
+        crossorigin="anonymous"
+        async>
+    </script>
+
+
+
+
+</main>
 
             <footer class="footer">
     <!--添加博客运行时间-->
