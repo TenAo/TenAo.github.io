@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>Notion和轻便无负担的灵感工具——Flomo</title>
+      <link href="living/e3ba70a70d91/"/>
+      <url>living/e3ba70a70d91/</url>
+      
+        <content type="html"><![CDATA[<p>最近推荐Notion的人太多，出于好奇当然得去了解一下。总体的感受就是，什么都能干，但是可自定义的东西很多显得花里胡哨的。</p><p>我个人图书、电影记录使用豆瓣，动画记录使用 Bangumi，写作则是妙笔+坚果云。</p><p>至于占大头的知识记录，原本是用为知笔记的，但现在电脑版用起来真的臃肿，已经很久没打开过了，充的几年会员其实也就用到提供的云服务。为知笔记过期后会考虑使用Notion（如果他家云服务稳定的话），但是三年后估计会有更符合我需求的产品出现吧，谁说得准呢。为知自己好像也在做类似的产品。</p><p>总体来讲，Notion的学习成本和我对它的需求价值不相符，果断放弃。我是真的不想再被工具玩了。</p><p>这个时候！</p><p>我想起来前段时间好像见过一个很轻的灵感记录软件，估计又是在少数派看到的，就又去搜索了一下。</p><p>没错，就是Flomo。</p><p>官方网站：<a href="https://flomoapp.com/">https://flomoapp.com/</a></p><p>界面是这样的，非常舒服。使用了第三方的护眼皮肤，<a href="https://greasyfork.org/zh-CN/scripts/410848-solarized-light-for-flomo">GreasyFork地址</a>。注意该脚本似乎没有继续维护，脚本内flomo的地址要改一下。</p><p><img src="https://gitee.com/yudu22/pic-go/raw/master/img/image-20210210010924583.png" class="lazy" data-srcset="https://gitee.com/yudu22/pic-go/raw/master/img/image-20210210010924583.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p><p>它像是一个私人的微博/说说，添加的memo以时间线形式显示。我们可以对旧memo进行批注，批注会保存为一条新的memo，下方会显示原memo的链接，见上图第一条。</p><p>可以设置标签，以 #父标签/子标签 的形式设置子标签。标签可以手动置顶。</p><p>官方有提供API，第三方玩法应该很多。比如Utools里就有利用API写的flomo插件。</p><p>官方功能的话还比较少，不过都还算实用。比如可以绑定微信进行输入。</p><p><strong>每日回顾</strong>可以设置回顾规则，通过微信提醒进行知识回顾。<a href="https://flomoapp.com/user/301?tag=%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/%E6%AF%8F%E6%97%A5%E5%9B%9E%E9%A1%BE">官方指南</a></p><p><img src="https://gitee.com/yudu22/pic-go/raw/master/img/image-20210210011252818.png" class="lazy" data-srcset="https://gitee.com/yudu22/pic-go/raw/master/img/image-20210210011252818.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p><p><strong>随机漫步</strong>功能通过算法找到灵感背后的联系，可能带来全新的灵感碰撞。</p><p><img src="https://gitee.com/yudu22/pic-go/raw/master/img/image-20210210011520351.png" class="lazy" data-srcset="https://gitee.com/yudu22/pic-go/raw/master/img/image-20210210011520351.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg=="></p><p>数据pro用户每 14 天可以导出一次，不是很担心跑路问题（喂），我预感应该会长期使用下去。</p><p>尚待改进：</p><ol><li><p>目前并不能本地使用。</p></li><li><p>随即漫步界面点击标签会打开新页面，我觉得直接本页面上显示就够了……</p></li><li><p>只要不是本地的我都会担心数据安全问题，应该只会拿来记一记读书的标注和读书感想。</p></li></ol><p>可以本篇文章对你有帮助，可以使用我的邀请链接注册，会赠送28天会员。</p><p>链接：<a href="https://flomoapp.com/register2/?MzU1MjA">https://flomoapp.com/register2/?MzU1MjA</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 生活 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 效率 </tag>
+            
+            <tag> Flomo </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>使用jsDelivr的CDN给Github图床加速</title>
       <link href="technology/70a65583f47a/"/>
       <url>technology/70a65583f47a/</url>
@@ -62,7 +89,7 @@
       <link href="literature/everyday-poem/d71602664f26/"/>
       <url>literature/everyday-poem/d71602664f26/</url>
       
-        <content type="html"><![CDATA[<center>稻云不雨不多黄，荞麦空花早着霜。</center><center>已分忍饥度残岁，更堪岁里闰添长。</center><p style='text-align:right'>——宋代·杨万里</p><p><strong>着</strong></p><p>个人判断应当读 zhuó ，取第二个意思。 </p><ol><li>穿（衣）：穿～。穿红～绿。～装。</li><li>接触，挨上：～陆。附～。不～边际。</li><li>使接触别的事物，使附在别的物体上：～眼。～笔。～色。～墨。～力。～想。～意（用心）。</li><li>下落，来源：～落。</li><li>派遣：～人前来领取。</li><li>公文用语，表示命令的口气：～即施行。</li></ol>]]></content>
+        <content type="html"><![CDATA[<center>稻云不雨不多黄，荞麦空花早着霜。</center><center>已分忍饥度残岁，更堪岁里闰添长。</center><p style='text-align:right'>——宋代·杨万里</p><ol><li><p><strong>着</strong></p><p>个人判断应当读 zhuó ，取第二个意思。 </p><ol><li>穿（衣）：穿～。穿红～绿。～装。</li><li>接触，挨上：～陆。附～。不～边际。</li><li>使接触别的事物，使附在别的物体上：～眼。～笔。～色。～墨。～力。～想。～意（用心）。</li><li>下落，来源：～落。</li><li>派遣：～人前来领取。</li><li>公文用语，表示命令的口气：～即施行。</li></ol></li></ol><ol start="2"><li><p>已分（fèn）：已经料定。 </p></li><li><p>残岁：岁终，年终。</p></li></ol>]]></content>
       
       
       <categories>
@@ -118,7 +145,7 @@
       <link href="living/53c7e6c4e8b3/"/>
       <url>living/53c7e6c4e8b3/</url>
       
-        <content type="html"><![CDATA[<blockquote class="blockquote-note blockquote-note__important"><div class="blockquote-note__header"><div class="blockquote-note__icon"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="16" viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></div>提示</div><div class="blockquote-note__content"><p>这篇文章全部是使用 百度输入法 的 小鹤双拼 模式输入的。</p></div></blockquote><p>原本是在英文打字网站 <a href="https://www.typelit.io/chapters/The_Time_Machine">TypeLit.io</a> 看名著打字学英语。想起最近写小说也经常遇到打字速度跟不上脑子的情况，灵光一闪想要改善一下输入体验。五笔输入法对我来说学习成本太高，所以决定居中一下，选择双拼。</p><p>练习站点：<a href="https://api.ihint.me/shuang/">https://api.ihint.me/shuang/</a></p><p>测试站点：<a href="https://www.51dzt.com/test/">金山打字通</a></p><p>开始学习前，全拼打字的速度：</p><img src="https://gitee.com/yudu22/pic-go/raw/master/img/image-20210110234545306.png" class="lazy" data-srcset="https://gitee.com/yudu22/pic-go/raw/master/img/image-20210110234545306.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg==" style="zoom:80%;" /><p>双拼打字的速度。表还没有背下来，速度比较那啥（。</p><img src="https://gitee.com/yudu22/pic-go/raw/master/img/image-20210110235347937.png" class="lazy" data-srcset="https://gitee.com/yudu22/pic-go/raw/master/img/image-20210110235347937.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg==" style="zoom:80%;" /><p>以后每天（或者隔一段时间）在下面的表格里更新打字速度。</p><table><thead><tr><th>时间</th><th>成绩 （字/分钟）</th><th>kpm</th><th>正确率（%）</th><th>打字速度峰值（字/分钟）</th></tr></thead><tbody><tr><td>2020.01.11 01:20</td><td>19</td><td>79</td><td>93</td><td>23</td></tr><tr><td>2020.01.11 02:19</td><td>36</td><td>114</td><td>93</td><td>60</td></tr><tr><td>2020.01.12 01:45</td><td>27</td><td>96</td><td>91</td><td>36</td></tr><tr><td>2020.01.13 22.13</td><td>50</td><td>132</td><td>98</td><td>52</td></tr><tr><td>2020.01.15 06.27</td><td>46</td><td>131</td><td>93</td><td>90</td></tr><tr><td>2020.01.15 22.35</td><td>53</td><td>133</td><td>97</td><td>63</td></tr></tbody></table>]]></content>
+        <content type="html"><![CDATA[<blockquote class="blockquote-note blockquote-note__important"><div class="blockquote-note__header"><div class="blockquote-note__icon"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="16" viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></div>提示</div><div class="blockquote-note__content"><p>这篇文章全部是使用 百度输入法 的 小鹤双拼 模式输入的。</p></div></blockquote><p>原本是在英文打字网站 <a href="https://www.typelit.io/chapters/The_Time_Machine">TypeLit.io</a> 看名著打字学英语。想起最近写小说也经常遇到打字速度跟不上脑子的情况，灵光一闪想要改善一下输入体验。五笔输入法对我来说学习成本太高，所以决定居中一下，选择双拼。</p><p>练习站点：<a href="https://api.ihint.me/shuang/">https://api.ihint.me/shuang/</a></p><p>测试站点：<a href="https://www.51dzt.com/test/">金山打字通</a></p><p>开始学习前，全拼打字的速度：</p><img src="https://gitee.com/yudu22/pic-go/raw/master/img/image-20210110234545306.png" class="lazy" data-srcset="https://gitee.com/yudu22/pic-go/raw/master/img/image-20210110234545306.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg==" style="zoom:80%;" /><p>双拼打字的速度。表还没有背下来，速度比较那啥（。</p><img src="https://gitee.com/yudu22/pic-go/raw/master/img/image-20210110235347937.png" class="lazy" data-srcset="https://gitee.com/yudu22/pic-go/raw/master/img/image-20210110235347937.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg==" style="zoom:80%;" /><p>以后每天（或者隔一段时间）在下面的表格里更新打字速度。</p><table><thead><tr><th>时间</th><th>成绩 （字/分钟）</th><th>kpm</th><th>正确率（%）</th><th>打字速度峰值（字/分钟）</th></tr></thead><tbody><tr><td>2021.01.11 01:20</td><td>19</td><td>79</td><td>93</td><td>23</td></tr><tr><td>2021.01.11 02:19</td><td>36</td><td>114</td><td>93</td><td>60</td></tr><tr><td>2021.01.12 01:45</td><td>27</td><td>96</td><td>91</td><td>36</td></tr><tr><td>2021.01.13 22:13</td><td>50</td><td>132</td><td>98</td><td>52</td></tr><tr><td>2021.01.15 06:27</td><td>46</td><td>131</td><td>93</td><td>90</td></tr><tr><td>2021.01.15 22:35</td><td>53</td><td>133</td><td>97</td><td>63</td></tr><tr><td>2021.01.21 15:18</td><td>66</td><td>169</td><td>99</td><td>76</td></tr><tr><td>2021.01.24 23:20</td><td>56</td><td>139</td><td>97</td><td>72</td></tr><tr><td>2021.01.31 16:42</td><td>57</td><td>155</td><td>99</td><td>60</td></tr><tr><td>2021.02.03 21:38</td><td>51</td><td>145</td><td>98</td><td>120</td></tr><tr><td>2021.02.10 00:34</td><td>52</td><td>146</td><td>95</td><td>62</td></tr></tbody></table>]]></content>
       
       
       <categories>
